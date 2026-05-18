@@ -1,0 +1,44 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/roulette/Display/rouletteDisplay.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/roulette/Display/reg_5bit.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/roulette/Display/dec2hex.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/roulette/Display/dec_3_8.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SRC/SRC.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SRC/Roulette_Dispatcher.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/Shift_Reg_Nary.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/Serial_Receiver_Generic.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/Serial_Receiver.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/Serial_Control.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/Parity_Check.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/LCD_Dispatcher.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/EQUALS.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/SLCDC.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Memory_Address_Control.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Buffer_Control.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/RAM.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Output_Buffer.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/KeyBoardReader.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/KEY_SCAN.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Key_Decode.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Ring_Buffer_Control.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Ring_Buffer.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Key_Control.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/clkDIV.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/REG_Nary.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/REG_4B.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX41.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX21.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FULLADDER.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FFD.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/DECODER.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/COUNTER.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/ADDER.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/RouletteGame.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/UsbPort.vhd}
+

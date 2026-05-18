@@ -1,0 +1,17 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/KEY_SCAN.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/REG_4B.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX_41.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX_21.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FULLADDER.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FFD.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/DECODER.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/COUNTER.vhd}
+vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/ADDER.vhd}
+

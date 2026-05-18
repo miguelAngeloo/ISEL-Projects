@@ -1,0 +1,90 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SRC is
+port(
+		reset 	: in std_logic;
+		Mclk		: in std_logic;
+		SS		   : in std_logic;
+		SCLK		: in std_logic;
+		SDX		: in std_logic;
+		E		   : out std_logic;
+		Dout		: out std_logic_vector(7 downto 0)
+);
+end SRC;
+
+architecture Structural of SRC is
+
+component Serial_Receiver_Generic is
+GENERIC (shRegSize : NATURAL := 8);
+	port (
+	
+		dataMatch : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      parityMatch : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		reset : IN STD_LOGIC;
+		clk : IN STD_LOGIC;
+		SS : IN STD_LOGIC;
+		SCLK : IN STD_LOGIC;
+		SDX : IN STD_LOGIC;
+		accept : IN STD_LOGIC;
+		DXval : OUT STD_LOGIC;
+		Data : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+);
+
+end component;
+
+
+component Roulette_Dispatcher is
+	port(
+		reset 	: in std_logic;
+		clk		: in std_logic;
+		Dval		: in std_logic;
+		Din		: in std_logic_vector(7 downto 0);
+		WrD		: out std_logic;
+		Dout		: out std_logic_vector(7 downto 0);
+		done		: out std_logic
+);
+
+end component;
+
+signal accept_signal : std_logic;
+signal DXval_signal : std_logic;
+signal Data_signal : std_logic_vector(7 downto 0);
+
+
+begin
+
+
+U_Serial_Receiver: Serial_Receiver_Generic
+GENERIC MAP (shRegSize => 8)
+port map (
+
+	SS => SS,
+	SCLK => SCLK,
+	SDX => SDX,
+	DXval => DXval_signal,
+	Data => Data_signal,
+	clk => Mclk,
+	reset => reset,
+	accept => accept_signal,
+	dataMatch => "1000",
+	parityMatch => "1001"
+);
+
+
+
+
+U_Roulette_Dispatcher: Roulette_Dispatcher port map (
+
+	Dval => DXval_signal,
+	Din => Data_signal,
+	WrD => E,
+	Dout => Dout,
+	done => accept_signal,
+	reset => reset,
+	clk => Mclk
+);
+
+
+
+end Structural;

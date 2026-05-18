@@ -1,0 +1,102 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Test_Serial_Receiver is
+port(
+		reset 	: in std_logic;
+		Mclk		: in std_logic;
+		--SS		   : in std_logic;
+		--SCLK		: in std_logic;
+		--SDX		: in std_logic;
+		E		   : out std_logic;
+		--Dout		: out std_logic_vector(4 downto 0);
+		LCD_DATA : out std_logic_vector(7 downto 3);
+		LCD_LEDS : out std_logic_vector(7 downto 3);
+		serial_leds:  out std_logic_vector(7 downto 3)
+);
+
+end Test_Serial_Receiver ;
+
+architecture Structural of Test_Serial_Receiver is
+
+component UsbPort is
+PORT(
+		inputPort:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		outputPort :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
+);
+
+end component;
+
+component SLCDC is
+port(
+		reset 	: in std_logic;
+		Mclk		: in std_logic;
+		SS		   : in std_logic;
+		SCLK		: in std_logic;
+		SDX		: in std_logic;
+		E		   : out std_logic;
+		Dout		: out std_logic_vector(4 downto 0);
+		serial_data	: out std_logic_vector(4 downto 0)
+);
+
+end component;
+
+
+
+component REG_Nary is
+GENERIC (size : NATURAL := 4);
+    PORT (
+        CLK : IN STD_LOGIC;
+        RESET : IN STD_LOGIC;
+        D : IN STD_LOGIC_VECTOR((size - 1) DOWNTO 0);
+        EN : IN STD_LOGIC;
+        Q : OUT STD_LOGIC_VECTOR((size - 1) DOWNTO 0)
+    );
+END component;
+
+
+signal UsbPort_input : std_logic_vector(7 downto 0) :="00000000";
+signal UsbPort_output : std_logic_vector(7 downto 0);
+signal lcd_dout : std_logic_vector(4 downto 0);
+signal sdx_s, sclk_s, ss_s : std_logic;
+
+begin
+
+LCD_DATA <= lcd_dout;
+LCD_LEDS <= lcd_dout;
+
+Unit_Serial_SLCDC: SLCDC port map (
+
+	Mclk => Mclk,
+	reset => reset,
+	SDX => sdx_s,
+	SCLK => sclk_s,
+	SS => ss_s,
+	E => E,
+	Dout => lcd_dout,
+	serial_data => serial_leds
+);
+
+ 
+ 
+ Unit_usb_port: UsbPort port map(
+
+	inputPort => UsbPort_input,
+	outputPort => UsbPort_output
+	
+);
+
+
+
+Unit_Reg_NARY: REG_Nary generic map (size => 3)
+port map (
+	CLK => Mclk,
+   RESET => reset,
+	D => UsbPort_output (2 downto 0),
+	EN => '1',
+   Q(0) => sdx_s,
+	Q(1) => sclk_s,
+	Q(2) => ss_s
+);
+
+end Structural;

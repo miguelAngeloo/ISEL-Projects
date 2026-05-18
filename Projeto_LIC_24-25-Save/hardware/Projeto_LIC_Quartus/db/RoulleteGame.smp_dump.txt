@@ -1,0 +1,52 @@
+
+State Machine - |RouletteGame|SLCDC:Unit_SLCDC|LCD_Dispatcher:U_LCD_Dispatcher|CurrentState
+Name CurrentState.state_bit_1 CurrentState.state_bit_0 
+CurrentState.STATE_INIT 0 0 
+CurrentState.STATE_VALID 0 1 
+CurrentState.STATE_DONE_ON 1 1 
+CurrentState.STATE_DONE_OFF 1 0 
+
+State Machine - |RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Serial_Control:U_Serial_Control|CurrentState
+Name CurrentState.state_bit_2 CurrentState.state_bit_1 CurrentState.state_bit_0 
+CurrentState.STATE_INIT 0 0 0 
+CurrentState.STATE_WRITE 0 0 1 
+CurrentState.STATE_DFLAG 0 1 1 
+CurrentState.STATE_VALID_DATA 0 1 0 
+CurrentState.STATE_ACCEPT 1 1 0 
+
+State Machine - |RouletteGame|SRC:Unit_Serial_SRC|Roulette_Dispatcher:U_Roulette_Dispatcher|CurrentState
+Name CurrentState.state_bit_1 CurrentState.state_bit_0 
+CurrentState.STATE_INIT 0 0 
+CurrentState.STATE_VALID 0 1 
+CurrentState.STATE_DONE 1 1 
+
+State Machine - |RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Serial_Control:U_Serial_Control|CurrentState
+Name CurrentState.state_bit_2 CurrentState.state_bit_1 CurrentState.state_bit_0 
+CurrentState.STATE_INIT 0 0 0 
+CurrentState.STATE_WRITE 0 0 1 
+CurrentState.STATE_DFLAG 0 1 1 
+CurrentState.STATE_VALID_DATA 0 1 0 
+CurrentState.STATE_ACCEPT 1 1 0 
+
+State Machine - |RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer|Buffer_Control:Unit_buffer_control|CurrentState
+Name CurrentState.state_bit_1 CurrentState.state_bit_0 
+CurrentState.STATE_INIT 0 0 
+CurrentState.STATE_WRITTING 0 1 
+CurrentState.STATE_VALID_DATA 1 1 
+CurrentState.STATE_WATTING 1 0 
+
+State Machine - |RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Ring_Buffer_Control:Unit_Ring_Buffer_Control|CurrentState
+Name CurrentState.state_bit_2 CurrentState.state_bit_1 CurrentState.state_bit_0 
+CurrentState.STATE_INIT 0 0 0 
+CurrentState.STATE_SET_WRITE 0 0 1 
+CurrentState.STATE_WRITE 0 1 1 
+CurrentState.STATE_INC_PUT 0 1 0 
+CurrentState.STATE_ACK 1 1 0 
+CurrentState.STATE_READ 1 1 1 
+CurrentState.STATE_INC_GET 1 0 1 
+
+State Machine - |RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|Key_Control:Unit_key_control|CurrentState
+Name CurrentState.state_bit_1 CurrentState.state_bit_0 
+CurrentState.STATE_SCANNING 0 0 
+CurrentState.STATE_PRESSING_KEY 0 1 
+CurrentState.STATE_WAITTING_RELEASE 1 1 

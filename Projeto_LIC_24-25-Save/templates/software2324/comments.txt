@@ -1,0 +1,27 @@
+
+/*
+    Estrutura LCD Parallel
+    // Input ->   \-\-\-\Dval\d3\d2\d1\d0
+    // Output ->  ACK\RS\Enable\CLK\D3\d2\d1\d0
+ */
+
+ import isel.leic.utils.Time
+
+ /*
+ Tabela - Outport - UsbPort - Bits:
+
+ 0 - DADOS (Série)
+ 1 - CLOCK
+ 2 - ENABLE 1 (LCD_NSS)
+ 3 - ENABLE 2 (SCORE_NSS)
+ 4 - ACKNOLEDGE (KBD - Temporário)
+
+ BackUp
+ # Serial Receiver
+ UsbPort.O0 -> srl./SS
+ UsbPort.O3 -> srl.SDX
+ UsbPort.O4-> srl.SCLK
+ srl.DXval -> dl.Dval
+ srl.D[0-8] -> dl.I[0-8]
+
+  */

@@ -1,0 +1,46 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SLCDC is
+port(
+		reset 	: in std_logic;
+		clk		: in std_logic;
+		Dval		: in std_logic;
+		Din		: in std_logic_vector(4 downto 0);
+		Wrl		: out std_logic;
+		Dout		: out std_logic_vector(4 downto 0);
+		done		: out std_logic
+);
+end SLCDC;
+
+architecture Structural of SLCDC is
+
+component Serial_Receiver is
+	port (
+	
+		reset : IN STD_LOGIC;
+		clk : IN STD_LOGIC;
+		SS : IN STD_LOGIC;
+		SCLK : IN STD_LOGIC;
+		SDX : IN STD_LOGIC;
+		accept : IN STD_LOGIC;
+		DXval : OUT STD_LOGIC;
+		Data : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
+);
+
+end component;
+
+
+component LCD_Dispatcher is
+	port(
+		reset 	: in std_logic;
+		clk		: in std_logic;
+		Dval		: in std_logic;
+		Din		: in std_logic_vector(4 downto 0);
+		Wrl		: out std_logic;
+		Dout		: out std_logic_vector(4 downto 0);
+		done		: out std_logic
+);
+end LCD_Dispatcher;
+
+end component;

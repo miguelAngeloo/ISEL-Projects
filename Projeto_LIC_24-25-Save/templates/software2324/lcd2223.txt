@@ -1,0 +1,140 @@
+/**
+ * Class that represents the LCD
+ */
+object LCD {
+    const val LCD_WIDTH = 16 // Length of LCD lines
+    private const val RS_MASK = 0x10 // Mask of the RS pin
+    private const val EN_MASK = 0x20 // Mask of the EN pin
+    private const val MASK = 0x0F // Mask of the data pins
+    private const val SERIAL_MODE = true // If true, the LCD is written in serial, otherwise it is written in parallel
+
+    /**
+     * Writes a nibble of command/data to the LCD in parallel
+     * @param rs true if the nibble is data, false if the nibble is command
+     * @param data the nibble to write
+     */
+    private fun writeNibbleParallel(rs: Boolean, data: Int) {
+        if (rs) HAL.setBits(RS_MASK) else HAL.clrBits(RS_MASK)
+        HAL.setBits(EN_MASK)
+        HAL.writeBits(MASK, data)
+        HAL.clrBits(EN_MASK)
+    }
+
+    /**
+     * Writes a nibble of command/data to the LCD in serial
+     * @param rs true if the nibble is data, false if the nibble is command
+     * @param data the nibble to write
+     */
+    private fun writeNibbleSerial(rs: Boolean, data: Int) {
+        var d = data shl 1
+        if (rs) d += 1
+        SerialEmitter.send(SerialEmitter.Destination.LCD, d)
+        Thread.sleep(1)
+    }
+
+    /**
+     * Writes a nibble of command/data to the LCD
+     * @param rs true if the nibble is data, false if the nibble is command
+     * @param data the nibble to write
+     */
+    private fun writeNibble(rs: Boolean, data: Int) =
+        if (SERIAL_MODE) writeNibbleSerial(rs, data)
+        else writeNibbleParallel(rs, data)
+
+    /**
+     * Writes a byte of command/data to the LCD
+     * @param rs true if the byte is data, false if the byte is command
+     * @param data the byte to write
+     */
+    private fun writeByte(rs: Boolean, data: Int) {
+        writeNibble(rs, ((data shr 4) and MASK)) //Escreve o primeiro nibble
+        writeNibble(rs, data and MASK) // Escreve o segundo nibble
+    }
+
+    /**
+     * Writes a command to the LCD
+     * @param data the command to write
+     */
+    private fun writeCMD(data: Int) = writeByte(false, data)
+
+    /**
+     * Writes data to the LCD
+     * @param data the data to write
+     */
+    private fun writeDATA(data: Int) = writeByte(true, data)
+
+    /**
+     * Initializes the LCD
+     */
+    fun init() {
+        Thread.sleep(50)
+        writeNibble(false, 0b000011)
+        Thread.sleep(5)
+        writeNibble(false, 0b000011)
+        Thread.sleep(0, 150000)
+        writeNibble(false, 0b000011)
+        writeNibble(false, 0b000010)
+
+        writeNibble(false, 0b000010)
+        writeNibble(false, 0b001100)
+
+        writeNibble(false, 0b000000)
+        writeNibble(false, 0b001100)
+
+        writeNibble(false, 0b000000)
+        writeNibble(false, 0b000001)
+
+        writeNibble(false, 0b000000)
+        writeNibble(false, 0b000000)
+
+        writeCMD(0b0000001100)
+    }
+
+    /**
+     * Writes a char to the LCD
+     * @param c the char to write
+     */
+    private fun write(c: Char) = writeDATA(c.code)
+
+    /**
+     * Writes a string to the LCD on the current position
+     * @param text the string to write
+     */
+    fun write(text: String) = text.forEach { write(it) }
+
+    /**
+     * Changes the position of the cursor on the LCD
+     * @param line the line to move the cursor to
+     * @param column the column to move the cursor to
+     */
+    fun cursor(line: Int, column: Int) {
+        val add = if (line == 1) 0x40 + column else column
+        writeCMD(0b10000000 + add)
+    }
+
+    /**
+     * Clears the LCD
+     */
+    fun clear() = writeCMD(0b0001)
+
+    /**
+     * Disables or enables the cursor on the LCD
+     */
+    fun enableCursor() = writeCMD(0b00001111)
+    fun disableCursor() = writeCMD(0b00001100)
+}
+
+/**
+ * Tests the LCD
+ */
+fun main(){
+    HAL.init()
+    SerialEmitter.init()
+    LCD.init()
+    LCD.write("Teste")
+    Thread.sleep(1000)
+    LCD.clear()
+    LCD.write("Teste2")
+    Thread.sleep(5)
+    LCD.cursor(0, 0)
+}

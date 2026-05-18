@@ -1,0 +1,44 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Shift_Reg is
+port(
+		Data : in std_logic;
+		clk : in std_logic;
+		E: in std_logic,
+		D: out std_logic_vector(4 downto 0)
+);
+
+end Shift_Reg;
+
+architecture Structural of Shift_Reg is
+
+component MUX21 is
+PORT (
+       X : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+       S : IN STD_LOGIC;
+       M : OUT STD_LOGIC
+);
+
+end component;
+
+
+component FFD is
+PORT(	
+		CLK : in std_logic;
+		RESET : in STD_LOGIC;
+		SET : in std_logic;
+		D : IN STD_LOGIC;
+		EN : IN STD_LOGIC;
+		Q : out std_logic
+);
+
+end component;
+
+
+
+begin
+
+
+
+end Structural;

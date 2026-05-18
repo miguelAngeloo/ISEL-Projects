@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Roulette_Dispatcher is
+port(
+		reset 	: in std_logic;
+		clk		: in std_logic;
+		Dval		: in std_logic;
+		Din		: in std_logic_vector(7 downto 0);
+		WrD		: out std_logic;
+		Dout		: out std_logic_vector(7 downto 0);
+		done		: out std_logic
+);
+end Roulette_Dispatcher;
+
+architecture behavioral of Roulette_Dispatcher is
+
+type STATE_TYPE is (STATE_INIT, STATE_VALID, STATE_DONE);
+
+signal CurrentState, NextState : STATE_TYPE;
+
+begin
+
+-- Flip-Flop's 
+CurrentState <= STATE_INIT when reset = '1' else NextState when rising_edge(clk);
+
+-- Generate Next State 
+GenerateNextState:
+process (CurrentState, Dval)
+	begin
+		case CurrentState is
+		
+			when STATE_INIT  =>       if (Dval = '1') then 
+														NextState <= STATE_VALID;
+											      else 
+														NextState <= STATE_INIT;
+											      end if;
+														
+			when STATE_VALID  =>   	NextState <= STATE_DONE;
+														
+			when STATE_DONE  => 		  if (Dval = '0') then 
+														NextState <= STATE_INIT;
+											      else 
+														NextState <= STATE_DONE;
+											      end if;
+	end case;
+end process;
+
+-- Generate outputs 
+WrD <= '1' when (CurrentState = STATE_VALID) else '0';
+					
+done <= '1' when (CurrentState = STATE_DONE) else '0';
+
+Dout <= Din;
+
+end behavioral;

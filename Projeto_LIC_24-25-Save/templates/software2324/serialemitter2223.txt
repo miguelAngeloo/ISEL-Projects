@@ -1,0 +1,53 @@
+object SerialEmitter {
+    /**
+     * Class with the possible destinations of the SerialEmitter
+     * @property LCD the LCD
+     * @property DOOR the door
+     */
+    enum class Destination {LCD, DOOR}
+
+    private const val NUM_BITS_DATA = 5 // Number of bits of data to send
+    private const val NOTLCDsel_NOTSS_MASK = 0b0000_0010 // Mask of the NOTLCDsel_NOTSS input
+    private const val NOTSDCsel_NOTSS_MASK = 0b0000_1000 // Mask of the NOTSDCsel_NOTSS input
+    private const val SCLK_MASK = 0b0001_0000 // Mask of the SCLK input
+    private const val SDX_MASK = 0b0000_0001 // Mask of the SDX input
+    private const val BUSY_MASK = 0b0100_0000 // Mask of the BUSY output
+
+    /**
+     * Inicializes the SerialEmitter
+     */
+    fun init() {
+        HAL.setBits(NOTLCDsel_NOTSS_MASK)
+        HAL.setBits(NOTSDCsel_NOTSS_MASK)
+    }
+
+    /**
+     * Sends data to the specified destination
+     * @param addr the destination
+     * @param data the data to send
+     */
+    fun send(addr: Destination, data: Int) {
+        val NOTSS_MASK: Int
+        if (addr == Destination.LCD) NOTSS_MASK = NOTLCDsel_NOTSS_MASK
+        else {
+            NOTSS_MASK = NOTSDCsel_NOTSS_MASK
+            while (isBusy());
+        }
+        HAL.clrBits(NOTSS_MASK)
+        var data = data
+        repeat(NUM_BITS_DATA) {
+            HAL.clrBits(SCLK_MASK)
+            HAL.writeBits(SDX_MASK, data)
+            HAL.setBits(SCLK_MASK)
+            data = data.shr(1)
+        }
+        HAL.clrBits(SCLK_MASK)
+        HAL.setBits(NOTSS_MASK)
+    }
+
+    /**
+     * Checks if the SerialEmitter is busy
+     * @return true if the SerialEmitter is busy, false otherwise
+     */
+    fun isBusy(): Boolean = HAL.isBit(BUSY_MASK)
+}

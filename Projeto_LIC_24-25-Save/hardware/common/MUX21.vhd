@@ -1,0 +1,13 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+ENTITY MUX21 IS
+    PORT (
+        X : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+        S : IN STD_LOGIC;
+        M : OUT STD_LOGIC
+    );
+END MUX21;
+ARCHITECTURE arq_mux21 OF MUX21 IS
+BEGIN
+    M <= (NOT S AND X(0)) OR (S AND X(1));
+END arq_mux21;

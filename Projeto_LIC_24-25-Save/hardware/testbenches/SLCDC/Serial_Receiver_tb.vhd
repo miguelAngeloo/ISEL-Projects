@@ -1,0 +1,131 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY Serial_Receiver_tb IS
+END Serial_Receiver_tb;
+
+ARCHITECTURE behavior OF Serial_Receiver_tb IS
+
+    -- Component declaration
+    COMPONENT Serial_Receiver IS
+        PORT (
+            reset : IN STD_LOGIC;
+            clk : IN STD_LOGIC;
+            SS : IN STD_LOGIC;
+            SCLK : IN STD_LOGIC;
+            SDX : IN STD_LOGIC;
+            accept : IN STD_LOGIC;
+            DXval : OUT STD_LOGIC;
+            Data : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    -- Signals to connect to DUT
+    SIGNAL reset_tb : STD_LOGIC := '0';
+    SIGNAL clk_tb : STD_LOGIC := '0';
+    SIGNAL SS_tb : STD_LOGIC := '1';
+    SIGNAL SCLK_tb : STD_LOGIC := '0';
+    SIGNAL SDX_tb : STD_LOGIC := '0';
+    SIGNAL accept_tb : STD_LOGIC := '0';
+    SIGNAL DXval_tb : STD_LOGIC;
+    SIGNAL D_tb : STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+    -- Clock period definition
+    CONSTANT MCLK_PERIOD : TIME := 20 ns;
+    CONSTANT MCLK_HALF_PERIOD : TIME := MCLK_PERIOD / 2;
+
+BEGIN
+
+    -- Instantiate the Unit Under Test (UUT)
+    uut : Serial_Receiver
+    PORT MAP(
+        reset => reset_tb,
+        clk => clk_tb,
+        SS => SS_tb,
+        SCLK => SCLK_tb,
+        SDX => SDX_tb,
+        accept => accept_tb,
+        DXval => DXval_tb,
+        Data => D_tb
+    );
+
+    -- Clock generation process
+    clk_process : PROCESS
+    BEGIN
+        WHILE true LOOP
+            clk_tb <= '1';
+            WAIT FOR MCLK_HALF_PERIOD;
+            clk_tb <= '0';
+            WAIT FOR MCLK_HALF_PERIOD;
+        END LOOP;
+    END PROCESS;
+
+    -- Stimulus process
+    stimulus : PROCESS
+    BEGIN
+        -- Initial reset
+        reset_tb <= '1';
+        WAIT FOR MCLK_PERIOD * 2;
+        reset_tb <= '0';
+        WAIT FOR MCLK_PERIOD * 2;
+
+        SS_tb <= '0';  -- Start transmission
+        WAIT FOR MCLK_PERIOD*5;
+        
+        SDX_tb <= '0';  -- Send first bit
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '1';  -- Clock high
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '0';  -- Clock low
+        WAIT FOR MCLK_PERIOD*5;
+
+        SDX_tb <= '1';  -- Send second bit
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '1';  -- Clock high
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '0';  -- Clock low
+        WAIT FOR MCLK_PERIOD*5;
+
+        SDX_tb <= '1';  -- Send third bit
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '1';  -- Clock high
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '0';  -- Clock low
+        WAIT FOR MCLK_PERIOD*5;
+
+        SDX_tb <= '0';  -- Send fourth bit
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '1';  -- Clock high
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '0';  -- Clock low
+        WAIT FOR MCLK_PERIOD*5;
+
+        SDX_tb <= '0';  -- Send fifth bit
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '1';  -- Clock high
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '0';  -- Clock low
+        WAIT FOR MCLK_PERIOD*5;
+
+        SDX_tb <= '1';  -- Send sixth bit
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '1';  -- Clock high
+        WAIT FOR MCLK_HALF_PERIOD*5;
+        SCLK_tb <= '0';  -- Clock low
+        WAIT FOR MCLK_PERIOD * 2;
+
+
+        SS_tb <= '1';  -- Start transmission
+        WAIT FOR MCLK_PERIOD*20;
+
+        accept_tb <= '1';  -- Accept data
+        WAIT FOR MCLK_PERIOD * 100;
+
+        accept_tb <= '0';  -- Accept data
+        WAIT FOR MCLK_PERIOD * 100;
+        
+        -- Finish simulation
+        WAIT;
+    END PROCESS;
+
+END ARCHITECTURE;

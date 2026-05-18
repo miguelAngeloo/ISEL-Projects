@@ -1,0 +1,44 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Test_Serial_Receiver is
+port(
+		SDX: out std_logic;
+		SCLK: out std_logic;
+		LCD_SEL: out std_logic
+);
+
+end Test_Serial_Receiver ;
+
+architecture Structural of Test_Serial_Receiver is
+
+component UsbPort is
+PORT(
+		inputPort:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		outputPort :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
+);
+
+end component;
+
+signal UsbPort_input : std_logic_vector(7 downto 0) :="00000000";
+signal UsbPort_output : std_logic_vector(7 downto 0);
+
+begin
+
+SDX <= UsbPort_output(0);
+SCLK <= UsbPort_output(1);
+LCD_SEL(6) <= UsbPort_output(2);
+
+
+
+
+ 
+ 
+ Unit_usb_port: UsbPort port map(
+
+	inputPort => UsbPort_input,
+	outputPort => UsbPort_output
+	
+);
+
+end Structural;

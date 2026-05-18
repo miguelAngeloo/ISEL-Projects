@@ -1,0 +1,134 @@
+|Counter
+Reset => REG:R.Reset
+Clock => REG:R.Clock
+Enabled => REG:R.Enabled
+S[0] <= ADDER:A.R[0]
+S[1] <= ADDER:A.R[1]
+S[2] <= ADDER:A.R[2]
+S[3] <= ADDER:A.R[3]
+
+
+|Counter|REG:R
+Reset => FFD:F0.Reset
+Reset => FFD:F1.Reset
+Reset => FFD:F2.Reset
+Reset => FFD:F3.Reset
+Clock => FFD:F0.Clock
+Clock => FFD:F1.Clock
+Clock => FFD:F2.Clock
+Clock => FFD:F3.Clock
+Enabled => FFD:F0.Enabled
+Enabled => FFD:F1.Enabled
+Enabled => FFD:F2.Enabled
+Enabled => FFD:F3.Enabled
+DIN[0] => FFD:F0.DIN
+DIN[1] => FFD:F1.DIN
+DIN[2] => FFD:F2.DIN
+DIN[3] => FFD:F3.DIN
+DOUT[0] <= FFD:F0.DOUT
+DOUT[1] <= FFD:F1.DOUT
+DOUT[2] <= FFD:F2.DOUT
+DOUT[3] <= FFD:F3.DOUT
+
+
+|Counter|REG:R|FFD:F0
+DIN => DOUT~reg0.DATAIN
+Reset => DOUT~reg0.ACLR
+Reset => DOUT.IN0
+Clock => DOUT~reg0.CLK
+Enabled => DOUT~reg0.ENA
+SET => DOUT.IN1
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|REG:R|FFD:F1
+DIN => DOUT~reg0.DATAIN
+Reset => DOUT~reg0.ACLR
+Reset => DOUT.IN0
+Clock => DOUT~reg0.CLK
+Enabled => DOUT~reg0.ENA
+SET => DOUT.IN1
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|REG:R|FFD:F2
+DIN => DOUT~reg0.DATAIN
+Reset => DOUT~reg0.ACLR
+Reset => DOUT.IN0
+Clock => DOUT~reg0.CLK
+Enabled => DOUT~reg0.ENA
+SET => DOUT.IN1
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|REG:R|FFD:F3
+DIN => DOUT~reg0.DATAIN
+Reset => DOUT~reg0.ACLR
+Reset => DOUT.IN0
+Clock => DOUT~reg0.CLK
+Enabled => DOUT~reg0.ENA
+SET => DOUT.IN1
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|ADDER:A
+A[0] => FULLADDER:F0.A
+A[1] => FULLADDER:F1.A
+A[2] => FULLADDER:F2.A
+A[3] => FULLADDER:F3.A
+B[0] => FULLADDER:F0.B
+B[1] => FULLADDER:F1.B
+B[2] => FULLADDER:F2.B
+B[3] => FULLADDER:F3.B
+CIN => FULLADDER:F0.CIN
+R[0] <= FULLADDER:F0.R
+R[1] <= FULLADDER:F1.R
+R[2] <= FULLADDER:F2.R
+R[3] <= FULLADDER:F3.R
+COUT <= FULLADDER:F3.COUT
+
+
+|Counter|ADDER:A|FULLADDER:F0
+A => R.IN0
+A => COUT.IN0
+B => R.IN1
+B => COUT.IN1
+CIN => R.IN1
+CIN => COUT.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|ADDER:A|FULLADDER:F1
+A => R.IN0
+A => COUT.IN0
+B => R.IN1
+B => COUT.IN1
+CIN => R.IN1
+CIN => COUT.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|ADDER:A|FULLADDER:F2
+A => R.IN0
+A => COUT.IN0
+B => R.IN1
+B => COUT.IN1
+CIN => R.IN1
+CIN => COUT.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|ADDER:A|FULLADDER:F3
+A => R.IN0
+A => COUT.IN0
+B => R.IN1
+B => COUT.IN1
+CIN => R.IN1
+CIN => COUT.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+

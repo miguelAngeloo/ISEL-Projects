@@ -1,0 +1,1232 @@
+# Reading pref.tcl
+# do RoulleteGame_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/EQUALS.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:35 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/SLCDC/EQUALS.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity EQUALS
+# -- Compiling architecture logicFunction of EQUALS
+# End time: 20:43:35 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Memory_Address_Control.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:35 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Memory_Address_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Memory_Address_Control
+# -- Compiling architecture arch of Memory_Address_Control
+# End time: 20:43:35 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Buffer_Control.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:35 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Buffer_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Buffer_Control
+# -- Compiling architecture behavioral of Buffer_Control
+# End time: 20:43:35 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/RAM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:35 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/RAM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity RAM
+# -- Compiling architecture behavioral of RAM
+# End time: 20:43:35 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Output_Buffer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:35 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Output_Buffer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Output_Buffer
+# -- Compiling architecture Structural of Output_Buffer
+# End time: 20:43:35 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/KeyBoardReader.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:35 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/KeyBoardReader.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity KeyBoardReader
+# -- Compiling architecture Structural of KeyBoardReader
+# End time: 20:43:35 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/KEY_SCAN.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:35 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/KEY_SCAN.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity KEY_SCAN
+# -- Compiling architecture arch_kscan of KEY_SCAN
+# End time: 20:43:36 on May 21,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Key_Decode.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:36 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Key_Decode.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Key_Decode
+# -- Compiling architecture Structural of Key_Decode
+# End time: 20:43:36 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Ring_Buffer_Control.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:36 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Ring_Buffer_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Ring_Buffer_Control
+# -- Compiling architecture behavioral of Ring_Buffer_Control
+# End time: 20:43:36 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Ring_Buffer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:36 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Ring_Buffer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Ring_Buffer
+# -- Compiling architecture Structural of Ring_Buffer
+# End time: 20:43:36 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Key_Control.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:36 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/Key_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Key_Control
+# -- Compiling architecture behavioral of Key_Control
+# End time: 20:43:36 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/clkDIV.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:36 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/keyboard/clkDIV.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity CLKDIV
+# -- Compiling architecture bhv of CLKDIV
+# End time: 20:43:36 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/REG_Nary.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:36 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/REG_Nary.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity REG_Nary
+# -- Compiling architecture Structural of REG_Nary
+# End time: 20:43:36 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/REG_4B.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:37 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/REG_4B.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg
+# -- Compiling architecture logicFunction of reg
+# End time: 20:43:37 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX41.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:37 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX41.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX41
+# -- Compiling architecture arq_mux41 of MUX41
+# End time: 20:43:37 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX21.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:37 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/MUX21.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX21
+# -- Compiling architecture arq_mux21 of MUX21
+# End time: 20:43:37 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FULLADDER.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:37 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FULLADDER.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FULLADDER
+# -- Compiling architecture LOGICFULLADDER of FULLADDER
+# End time: 20:43:37 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:37 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture logicFunction of FFD
+# End time: 20:43:38 on May 21,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/DECODER.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:38 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/DECODER.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DECODER
+# -- Compiling architecture logicFuntion of DECODER
+# End time: 20:43:38 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/COUNTER.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:38 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/COUNTER.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Counter
+# -- Compiling architecture ARCH of Counter
+# End time: 20:43:38 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/ADDER.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:38 on May 21,2025
+# vcom -reportprogress 300 -93 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/common/ADDER.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ADDER
+# -- Compiling architecture ARCH_ADDER of ADDER
+# End time: 20:43:38 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:44:31 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 20:44:31 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:44:33 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 20:44:33 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# vsim work.keyboard_reader_tb 
+# Start time: 20:44:36 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/reset_tb \
+sim:/keyboard_reader_tb/mclk_tb \
+sim:/keyboard_reader_tb/kack_tb \
+sim:/keyboard_reader_tb/lines_kbr_tb \
+sim:/keyboard_reader_tb/kval_tb \
+sim:/keyboard_reader_tb/columns_kbr_tb \
+sim:/keyboard_reader_tb/k_tb \
+sim:/keyboard_reader_tb/not_lines_kbr_tb \
+sim:/keyboard_reader_tb/not_columns_kbr_tb
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlftjqix3w".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjqix3w
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossível localizar o módulo especificado.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+restart
+run
+# GetModuleFileName: Impossível localizar o módulo especificado.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+run
+# GetModuleFileName: Impossível localizar o módulo especificado.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:03:24 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:03:24 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:03:27 on May 21,2025, Elapsed time: 0:18:51
+# Errors: 0, Warnings: 4
+# vsim work.keyboard_reader_tb 
+# Start time: 21:03:27 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlftwqq8qj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwqq8qj
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:06:48 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:06:48 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:06:53 on May 21,2025, Elapsed time: 0:03:26
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:06:53 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlftqgtagt".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqgtagt
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:10:39 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:10:39 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:10:42 on May 21,2025, Elapsed time: 0:03:49
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:10:42 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlftrw3aj8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrw3aj8
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:12:44 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:12:45 on May 21,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:12:48 on May 21,2025, Elapsed time: 0:02:06
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:12:48 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlftmmrefx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmmrefx
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:16:29 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:16:29 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:16:33 on May 21,2025, Elapsed time: 0:03:45
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:16:33 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlftqrkar5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqrkar5
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:17:50 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:17:50 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:17:57 on May 21,2025, Elapsed time: 0:01:24
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:17:57 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlft9m5wf3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft9m5wf3
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:21:01 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:21:01 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:21:05 on May 21,2025, Elapsed time: 0:03:08
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:21:05 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlft15cd5d".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft15cd5d
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:55 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:23:55 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:23:58 on May 21,2025, Elapsed time: 0:02:53
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:23:58 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlftg7yk34".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftg7yk34
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+vcom -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:31:22 on May 21,2025
+# vcom -reportprogress 300 -work work C:/ISEL/4_Semestre/LIC/Projeto_LIC_24-25/hardware/testbenches/keyboard/Keyboard_Reader_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keyboard_reader_tb
+# -- Compiling architecture behavioral of keyboard_reader_tb
+# End time: 21:31:22 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keyboard_reader_tb
+# End time: 21:31:30 on May 21,2025, Elapsed time: 0:07:32
+# Errors: 0, Warnings: 6
+# vsim work.keyboard_reader_tb 
+# Start time: 21:31:30 on May 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keyboard_reader_tb(behavioral)
+# Loading work.keyboardreader(structural)
+# Loading work.key_decode(structural)
+# Loading work.key_scan(arch_kscan)
+# Loading work.counter(arch)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.adder(arch_adder)
+# Loading work.fulladder(logicfulladder)
+# Loading work.decoder(logicfuntion)
+# Loading work.mux41(arq_mux41)
+# Loading work.mux21(arq_mux21)
+# Loading work.key_control(behavioral)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.ring_buffer(structural)
+# Loading work.ring_buffer_control(behavioral)
+# Loading work.memory_address_control(arch)
+# Loading work.equals(logicfunction)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ram(behavioral)
+# Loading work.output_buffer(structural)
+# Loading work.buffer_control(behavioral)
+# Loading work.reg_nary(structural)
+add wave -position insertpoint  \
+sim:/keyboard_reader_tb/uut/reset \
+sim:/keyboard_reader_tb/uut/Mclk \
+sim:/keyboard_reader_tb/uut/Kack \
+sim:/keyboard_reader_tb/uut/Lines_KBR \
+sim:/keyboard_reader_tb/uut/Dval \
+sim:/keyboard_reader_tb/uut/Columns_KBR \
+sim:/keyboard_reader_tb/uut/Q \
+sim:/keyboard_reader_tb/uut/DAC_to_KackDec \
+sim:/keyboard_reader_tb/uut/Kval_to_DAV \
+sim:/keyboard_reader_tb/uut/Wreg_to_Load \
+sim:/keyboard_reader_tb/uut/OBfree_to_CTS \
+sim:/keyboard_reader_tb/uut/K_Dec_Data \
+sim:/keyboard_reader_tb/uut/Ring_Buffer_Data \
+sim:/keyboard_reader_tb/uut/Output_Buffer_Data
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jfmal  Hostname: LAPTOP-S8078MOC  ProcessID: 46072
+#           Attempting to use alternate WLF file "./wlfttj7x9f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttj7x9f
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossível localizar o módulo especificado.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossível localizar o módulo especificado.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossível localizar o módulo especificado.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 1  Instance: /keyboard_reader_tb/uut/Unit_ring_buffer/Unit_RAM

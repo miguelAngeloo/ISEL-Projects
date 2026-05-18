@@ -1,0 +1,48 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Decoder_tb_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Decoder_Test/Decoder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:02:39 on Mar 05,2024
+# vcom -reportprogress 300 -93 -work work C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Decoder_Test/Decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Decoder
+# -- Compiling architecture arch of Decoder
+# End time: 10:02:39 on Mar 05,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Decoder_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:03:05 on Mar 05,2024
+# vcom -reportprogress 300 -work work C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Decoder_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Decoder_tb
+# -- Compiling architecture behavioral of Decoder_tb
+# End time: 10:03:05 on Mar 05,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.decoder_tb
+# vsim work.decoder_tb 
+# Start time: 10:03:09 on Mar 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.decoder_tb(behavioral)
+# Loading work.decoder(arch)
+add wave -position end  sim:/decoder_tb/i
+add wave -position end  sim:/decoder_tb/s
+run
+# End time: 10:03:52 on Mar 05,2024, Elapsed time: 0:00:43
+# Errors: 0, Warnings: 0

@@ -1,0 +1,62 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY Shift_Reg_Nary IS
+    GENERIC (size : NATURAL := 5);
+    PORT (
+        Data : IN STD_LOGIC;
+        clk : IN STD_LOGIC;
+        E : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        Sout : OUT STD_LOGIC;
+        D : OUT STD_LOGIC_VECTOR((size - 1) DOWNTO 0)
+    );
+END Shift_Reg_Nary;
+
+ARCHITECTURE Structural OF Shift_Reg_Nary IS
+
+    COMPONENT FFD IS
+        PORT (
+            CLK : IN STD_LOGIC;
+            RESET : IN STD_LOGIC;
+            SET : IN STD_LOGIC;
+            D : IN STD_LOGIC;
+            EN : IN STD_LOGIC;
+            Q : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    SIGNAL ffd_in_values, ffd_out_values : STD_LOGIC_VECTOR(size - 1 DOWNTO 0);
+
+BEGIN
+    -- Generate the shift register using a loop
+    circuit_gen : FOR ii IN 0 TO size - 1 GENERATE
+        FFD_inst : FFD
+        PORT MAP(
+            CLK => clk,
+            RESET => reset,
+            SET => '0',
+            D => ffd_in_values(ii),
+            EN => E,
+            Q => ffd_out_values(ii)
+        );
+        
+        -- Connect the output of the previous FFD to the input of the next FFD
+        -- Use IF-GENERATE for conditional connections
+        first_ffd : IF ii = 0 GENERATE
+            ffd_in_values(ii) <= Data; -- First FFD takes Data as input
+        END GENERATE first_ffd;
+
+        other_ffd : IF ii > 0 GENERATE
+            ffd_in_values(ii) <= ffd_out_values(ii - 1); -- Connect to previous FFD output
+        END GENERATE other_ffd;
+    
+    END GENERATE circuit_gen;
+
+    -- Connect the output of the last FFD to Sout
+    Sout <= ffd_out_values(size - 1);
+
+    -- Assign the values to the output vector D
+    D <= ffd_out_values;
+
+END Structural;

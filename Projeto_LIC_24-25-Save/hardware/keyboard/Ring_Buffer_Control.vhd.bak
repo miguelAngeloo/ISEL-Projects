@@ -1,0 +1,79 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Ring_Buffer_Control is
+port(
+		reset 	: in std_logic;
+		clk		: in std_logic;
+		DAV		: in std_logic;
+		CTS	   : in std_logic;
+		full		: in std_logic;
+		empty		: in std_logic;
+		Wr		   : out std_logic;
+		selPG		: out std_logic;
+		incPutC	: out std_logic;
+		incGetC	: out std_logic;
+		Wreg	   : out std_logic;
+		DAC	   : out std_logic
+);
+end Ring_Buffer_Control;
+
+architecture behavioral of Ring_Buffer_Control is
+
+type STATE_TYPE is (STATE_INIT, STATE_SET_WRITE, STATE_WRITE, STATE_INC_PUT, STATE_ACK, STATE_READ, STATE_INC_GET);
+
+signal CurrentState, NextState : STATE_TYPE;
+
+begin
+
+-- Flip-Flop's 
+CurrentState <= STATE_INIT when reset = '1' else NextState when rising_edge(clk);
+
+-- Generate Next State 
+GenerateNextState:
+process (CurrentState, DAV, CTS, full, empty)
+	begin
+		case CurrentState is
+		
+			when STATE_INIT  =>       if (Load = '1') then 
+														NextState <= STATE_WRITTING;
+											      else 
+														NextState <= STATE_INIT;
+											      end if;
+														
+			when STATE_SET_WRITE =>   if (Load = '0') then
+														NextState <= STATE_VALID_DATA;
+												   else 
+														NextState <= STATE_WRITTING;
+												   end if;
+														
+			when STATE_WRITE => if (Ack = '1') then
+														NextState <= STATE_WATTING;
+													else
+														NextState <= STATE_VALID_DATA;
+													end if;
+													
+			when STATE_INC_PUT  =>       if (Ack = '0') then 
+														NextState <= STATE_INIT;
+											      else 
+														NextState <= STATE_WATTING;
+											      end if;							
+										
+										
+										
+	end case;
+end process;
+
+-- Generate outputs 
+selPG <= '1' when (CurrentState = STATE_SET_WRITE ) else '0';
+					
+Wreg <= '1' when (CurrentState = STATE_READ else '0';
+
+incGetC <= '1' when (CurrentState = STATE_INC_GET) else '0';
+
+incPutC <= '1' when (CurrentState = STATE_INC_PUT) else '0';
+
+DAC <= '1' when (CurrentState = STATE_ACK) else '0';
+
+end behavioral;
+							

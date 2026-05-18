@@ -1,0 +1,4133 @@
+|RouletteGame
+reset => KeyBoardReader:Unit_keyboard_reader.reset
+reset => SRC:Unit_Serial_SRC.reset
+reset => SLCDC:Unit_SLCDC.reset
+Mclk => KeyBoardReader:Unit_keyboard_reader.Mclk
+Mclk => SRC:Unit_Serial_SRC.Mclk
+Mclk => SLCDC:Unit_SLCDC.Mclk
+MSwitch => UsbPort:Unit_usb_port.inputPort[7]
+CoinSwitch => UsbPort:Unit_usb_port.inputPort[6]
+CoinIdSwitch => UsbPort:Unit_usb_port.inputPort[5]
+Lines_Pins[0] => KeyBoardReader:Unit_keyboard_reader.Lines_KBR[0]
+Lines_Pins[1] => KeyBoardReader:Unit_keyboard_reader.Lines_KBR[1]
+Lines_Pins[2] => KeyBoardReader:Unit_keyboard_reader.Lines_KBR[2]
+Lines_Pins[3] => KeyBoardReader:Unit_keyboard_reader.Lines_KBR[3]
+Columns_Pins[0] <= KeyBoardReader:Unit_keyboard_reader.Columns_KBR[0]
+Columns_Pins[1] <= KeyBoardReader:Unit_keyboard_reader.Columns_KBR[1]
+Columns_Pins[2] <= KeyBoardReader:Unit_keyboard_reader.Columns_KBR[2]
+Columns_Pins[3] <= KeyBoardReader:Unit_keyboard_reader.Columns_KBR[3]
+CoinAcceptLED <= UsbPort:Unit_usb_port.outputPort[6]
+LCD_DATA[4] <= SLCDC:Unit_SLCDC.Dout[1]
+LCD_DATA[5] <= SLCDC:Unit_SLCDC.Dout[2]
+LCD_DATA[6] <= SLCDC:Unit_SLCDC.Dout[3]
+LCD_DATA[7] <= SLCDC:Unit_SLCDC.Dout[4]
+LCD_RS <= SLCDC:Unit_SLCDC.Dout[0]
+LCD_E <= SLCDC:Unit_SLCDC.E
+HEX0[0] <= rouletteDisplay:Unit_Roulette_Display.HEX0[0]
+HEX0[1] <= rouletteDisplay:Unit_Roulette_Display.HEX0[1]
+HEX0[2] <= rouletteDisplay:Unit_Roulette_Display.HEX0[2]
+HEX0[3] <= rouletteDisplay:Unit_Roulette_Display.HEX0[3]
+HEX0[4] <= rouletteDisplay:Unit_Roulette_Display.HEX0[4]
+HEX0[5] <= rouletteDisplay:Unit_Roulette_Display.HEX0[5]
+HEX0[6] <= rouletteDisplay:Unit_Roulette_Display.HEX0[6]
+HEX0[7] <= rouletteDisplay:Unit_Roulette_Display.HEX0[7]
+HEX1[0] <= rouletteDisplay:Unit_Roulette_Display.HEX1[0]
+HEX1[1] <= rouletteDisplay:Unit_Roulette_Display.HEX1[1]
+HEX1[2] <= rouletteDisplay:Unit_Roulette_Display.HEX1[2]
+HEX1[3] <= rouletteDisplay:Unit_Roulette_Display.HEX1[3]
+HEX1[4] <= rouletteDisplay:Unit_Roulette_Display.HEX1[4]
+HEX1[5] <= rouletteDisplay:Unit_Roulette_Display.HEX1[5]
+HEX1[6] <= rouletteDisplay:Unit_Roulette_Display.HEX1[6]
+HEX1[7] <= rouletteDisplay:Unit_Roulette_Display.HEX1[7]
+HEX2[0] <= rouletteDisplay:Unit_Roulette_Display.HEX2[0]
+HEX2[1] <= rouletteDisplay:Unit_Roulette_Display.HEX2[1]
+HEX2[2] <= rouletteDisplay:Unit_Roulette_Display.HEX2[2]
+HEX2[3] <= rouletteDisplay:Unit_Roulette_Display.HEX2[3]
+HEX2[4] <= rouletteDisplay:Unit_Roulette_Display.HEX2[4]
+HEX2[5] <= rouletteDisplay:Unit_Roulette_Display.HEX2[5]
+HEX2[6] <= rouletteDisplay:Unit_Roulette_Display.HEX2[6]
+HEX2[7] <= rouletteDisplay:Unit_Roulette_Display.HEX2[7]
+HEX3[0] <= rouletteDisplay:Unit_Roulette_Display.HEX3[0]
+HEX3[1] <= rouletteDisplay:Unit_Roulette_Display.HEX3[1]
+HEX3[2] <= rouletteDisplay:Unit_Roulette_Display.HEX3[2]
+HEX3[3] <= rouletteDisplay:Unit_Roulette_Display.HEX3[3]
+HEX3[4] <= rouletteDisplay:Unit_Roulette_Display.HEX3[4]
+HEX3[5] <= rouletteDisplay:Unit_Roulette_Display.HEX3[5]
+HEX3[6] <= rouletteDisplay:Unit_Roulette_Display.HEX3[6]
+HEX3[7] <= rouletteDisplay:Unit_Roulette_Display.HEX3[7]
+HEX4[0] <= rouletteDisplay:Unit_Roulette_Display.HEX4[0]
+HEX4[1] <= rouletteDisplay:Unit_Roulette_Display.HEX4[1]
+HEX4[2] <= rouletteDisplay:Unit_Roulette_Display.HEX4[2]
+HEX4[3] <= rouletteDisplay:Unit_Roulette_Display.HEX4[3]
+HEX4[4] <= rouletteDisplay:Unit_Roulette_Display.HEX4[4]
+HEX4[5] <= rouletteDisplay:Unit_Roulette_Display.HEX4[5]
+HEX4[6] <= rouletteDisplay:Unit_Roulette_Display.HEX4[6]
+HEX4[7] <= rouletteDisplay:Unit_Roulette_Display.HEX4[7]
+HEX5[0] <= rouletteDisplay:Unit_Roulette_Display.HEX5[0]
+HEX5[1] <= rouletteDisplay:Unit_Roulette_Display.HEX5[1]
+HEX5[2] <= rouletteDisplay:Unit_Roulette_Display.HEX5[2]
+HEX5[3] <= rouletteDisplay:Unit_Roulette_Display.HEX5[3]
+HEX5[4] <= rouletteDisplay:Unit_Roulette_Display.HEX5[4]
+HEX5[5] <= rouletteDisplay:Unit_Roulette_Display.HEX5[5]
+HEX5[6] <= rouletteDisplay:Unit_Roulette_Display.HEX5[6]
+HEX5[7] <= rouletteDisplay:Unit_Roulette_Display.HEX5[7]
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader
+reset => Key_Decode:Unit_key_decode.reset
+reset => Ring_Buffer:Unit_ring_buffer.reset
+reset => Output_Buffer:Unit_output_buffer.reset
+Mclk => Key_Decode:Unit_key_decode.Mclk
+Mclk => Ring_Buffer:Unit_ring_buffer.Mclk
+Mclk => Output_Buffer:Unit_output_buffer.clk
+Kack => Output_Buffer:Unit_output_buffer.Ack
+Lines_KBR[0] => Key_Decode:Unit_key_decode.Lines_dec[0]
+Lines_KBR[1] => Key_Decode:Unit_key_decode.Lines_dec[1]
+Lines_KBR[2] => Key_Decode:Unit_key_decode.Lines_dec[2]
+Lines_KBR[3] => Key_Decode:Unit_key_decode.Lines_dec[3]
+Dval <= Output_Buffer:Unit_output_buffer.Dval
+Columns_KBR[0] <= Key_Decode:Unit_key_decode.Columns_dec[0]
+Columns_KBR[1] <= Key_Decode:Unit_key_decode.Columns_dec[1]
+Columns_KBR[2] <= Key_Decode:Unit_key_decode.Columns_dec[2]
+Columns_KBR[3] <= Key_Decode:Unit_key_decode.Columns_dec[3]
+Q[0] <= Output_Buffer:Unit_output_buffer.Q[0]
+Q[1] <= Output_Buffer:Unit_output_buffer.Q[1]
+Q[2] <= Output_Buffer:Unit_output_buffer.Q[2]
+Q[3] <= Output_Buffer:Unit_output_buffer.Q[3]
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode
+reset => KEY_SCAN:Unit_key_scan.reset
+reset => Key_Control:Unit_key_control.reset
+Mclk => clkDIV:Unit_clock_div.clk_in
+Kack_dec => Key_Control:Unit_key_control.Kack
+Lines_dec[0] => KEY_SCAN:Unit_key_scan.lines[0]
+Lines_dec[1] => KEY_SCAN:Unit_key_scan.lines[1]
+Lines_dec[2] => KEY_SCAN:Unit_key_scan.lines[2]
+Lines_dec[3] => KEY_SCAN:Unit_key_scan.lines[3]
+Kval_dec <= Key_Control:Unit_key_control.Kval
+Columns_dec[0] <= KEY_SCAN:Unit_key_scan.columns[0]
+Columns_dec[1] <= KEY_SCAN:Unit_key_scan.columns[1]
+Columns_dec[2] <= KEY_SCAN:Unit_key_scan.columns[2]
+Columns_dec[3] <= KEY_SCAN:Unit_key_scan.columns[3]
+K[0] <= KEY_SCAN:Unit_key_scan.keyData[0]
+K[1] <= KEY_SCAN:Unit_key_scan.keyData[1]
+K[2] <= KEY_SCAN:Unit_key_scan.keyData[2]
+K[3] <= KEY_SCAN:Unit_key_scan.keyData[3]
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan
+clk => COUNTER:counter_A.Clock
+reset => COUNTER:counter_A.Reset
+keyScan => COUNTER:counter_A.Enabled
+lines[0] => MUX41:mux_A.D[0]
+lines[1] => MUX41:mux_A.D[1]
+lines[2] => MUX41:mux_A.D[2]
+lines[3] => MUX41:mux_A.D[3]
+keyPress <= MUX41:mux_A.M
+keyData[0] <= COUNTER:counter_A.S[0]
+keyData[1] <= COUNTER:counter_A.S[1]
+keyData[2] <= COUNTER:counter_A.S[2]
+keyData[3] <= COUNTER:counter_A.S[3]
+columns[0] <= DECODER:decoder_A.EX0
+columns[1] <= DECODER:decoder_A.EX1
+columns[2] <= DECODER:decoder_A.EX2
+columns[3] <= DECODER:decoder_A.EX3
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A
+Reset => reg:reg_4.RESET
+Clock => reg:reg_4.CLK
+Enabled => reg:reg_4.EN
+S[0] <= reg:reg_4.Q[0]
+S[1] <= reg:reg_4.Q[1]
+S[2] <= reg:reg_4.Q[2]
+S[3] <= reg:reg_4.Q[3]
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|reg:reg_4
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|reg:reg_4|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|reg:reg_4|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|reg:reg_4|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|reg:reg_4|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|ADDER:adder_4
+A[0] => FULLADDER:FA0.A
+A[1] => FULLADDER:FA1.A
+A[2] => FULLADDER:FA2.A
+A[3] => FULLADDER:FA3.A
+B[0] => FULLADDER:FA0.B
+B[1] => FULLADDER:FA1.B
+B[2] => FULLADDER:FA2.B
+B[3] => FULLADDER:FA3.B
+C0 => FULLADDER:FA0.Cin
+S[0] <= FULLADDER:FA0.R
+S[1] <= FULLADDER:FA1.R
+S[2] <= FULLADDER:FA2.R
+S[3] <= FULLADDER:FA3.R
+C4 <= FULLADDER:FA3.Cout
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|ADDER:adder_4|FULLADDER:FA0
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|ADDER:adder_4|FULLADDER:FA1
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|ADDER:adder_4|FULLADDER:FA2
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|Counter:counter_A|ADDER:adder_4|FULLADDER:FA3
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|DECODER:decoder_A
+S0 => EX1.IN0
+S0 => EX3.IN0
+S0 => EX0.IN0
+S0 => EX2.IN0
+S1 => EX2.IN1
+S1 => EX3.IN1
+S1 => EX0.IN1
+S1 => EX1.IN1
+EX0 <= EX0.DB_MAX_OUTPUT_PORT_TYPE
+EX1 <= EX1.DB_MAX_OUTPUT_PORT_TYPE
+EX2 <= EX2.DB_MAX_OUTPUT_PORT_TYPE
+EX3 <= EX3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|MUX41:mux_A
+D[0] => MUX21:U0.X[0]
+D[1] => MUX21:U0.X[1]
+D[2] => MUX21:U1.X[0]
+D[3] => MUX21:U1.X[1]
+S[0] => MUX21:U0.S
+S[0] => MUX21:U1.S
+S[1] => MUX21:U2.S
+M <= MUX21:U2.M
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|MUX41:mux_A|MUX21:U0
+X[0] => M.IN0
+X[1] => M.IN0
+S => M.IN1
+S => M.IN1
+M <= M.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|MUX41:mux_A|MUX21:U1
+X[0] => M.IN0
+X[1] => M.IN0
+S => M.IN1
+S => M.IN1
+M <= M.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|KEY_SCAN:Unit_key_scan|MUX41:mux_A|MUX21:U2
+X[0] => M.IN0
+X[1] => M.IN0
+S => M.IN1
+S => M.IN1
+M <= M.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|Key_Control:Unit_key_control
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+Kack => Selector2.IN2
+Kack => GenerateNextState.IN0
+Kack => Selector1.IN1
+Kpress => Selector1.IN2
+Kpress => Kscan.IN0
+Kpress => Selector0.IN2
+Kpress => GenerateNextState.IN1
+Kval <= Kval.DB_MAX_OUTPUT_PORT_TYPE
+Kscan <= Kscan.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Key_Decode:Unit_key_decode|CLKDIV:Unit_clock_div
+clk_in => tmp.CLK
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => count[2].CLK
+clk_in => count[3].CLK
+clk_in => count[4].CLK
+clk_in => count[5].CLK
+clk_in => count[6].CLK
+clk_in => count[7].CLK
+clk_in => count[8].CLK
+clk_in => count[9].CLK
+clk_in => count[10].CLK
+clk_in => count[11].CLK
+clk_in => count[12].CLK
+clk_in => count[13].CLK
+clk_in => count[14].CLK
+clk_in => count[15].CLK
+clk_in => count[16].CLK
+clk_in => count[17].CLK
+clk_in => count[18].CLK
+clk_in => count[19].CLK
+clk_in => count[20].CLK
+clk_in => count[21].CLK
+clk_in => count[22].CLK
+clk_in => count[23].CLK
+clk_in => count[24].CLK
+clk_in => count[25].CLK
+clk_in => count[26].CLK
+clk_in => count[27].CLK
+clk_in => count[28].CLK
+clk_in => count[29].CLK
+clk_in => count[30].CLK
+clk_in => count[31].CLK
+clk_out <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer
+reset => Ring_Buffer_Control:Unit_Ring_Buffer_Control.reset
+reset => Memory_Address_Control:Unit_MAC_Address.reset
+Mclk => Ring_Buffer_Control:Unit_Ring_Buffer_Control.clk
+Mclk => Memory_Address_Control:Unit_MAC_Address.clk
+DAV => Ring_Buffer_Control:Unit_Ring_Buffer_Control.DAV
+CTS => Ring_Buffer_Control:Unit_Ring_Buffer_Control.CTS
+Data[0] => RAM:Unit_RAM.din[0]
+Data[1] => RAM:Unit_RAM.din[1]
+Data[2] => RAM:Unit_RAM.din[2]
+Data[3] => RAM:Unit_RAM.din[3]
+Wreg <= Ring_Buffer_Control:Unit_Ring_Buffer_Control.Wreg
+Q[0] <= RAM:Unit_RAM.dout[0]
+Q[1] <= RAM:Unit_RAM.dout[1]
+Q[2] <= RAM:Unit_RAM.dout[2]
+Q[3] <= RAM:Unit_RAM.dout[3]
+DAC <= Ring_Buffer_Control:Unit_Ring_Buffer_Control.DAC
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Ring_Buffer_Control:Unit_Ring_Buffer_Control
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+DAV => GenerateNextState.IN0
+DAV => GenerateNextState.IN0
+DAV => Selector1.IN3
+DAV => GenerateNextState.IN0
+DAV => GenerateNextState.IN0
+DAV => Selector0.IN2
+CTS => GenerateNextState.IN1
+CTS => GenerateNextState.IN1
+CTS => Selector2.IN3
+CTS => GenerateNextState.IN1
+CTS => NextState.STATE_INC_GET.DATAB
+full => GenerateNextState.IN1
+full => GenerateNextState.IN1
+empty => GenerateNextState.IN1
+empty => GenerateNextState.IN1
+Wr <= Wr.DB_MAX_OUTPUT_PORT_TYPE
+selPG <= selPG.DB_MAX_OUTPUT_PORT_TYPE
+incPutC <= incPutC.DB_MAX_OUTPUT_PORT_TYPE
+incGetC <= incGetC.DB_MAX_OUTPUT_PORT_TYPE
+Wreg <= Wreg.DB_MAX_OUTPUT_PORT_TYPE
+DAC <= DAC.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address
+clk => FFD:reg_putNget.CLK
+clk => Counter:putIndex_Counter.Clock
+clk => Counter:getIndex_Counter.Clock
+reset => FFD:reg_putNget.RESET
+reset => Counter:putIndex_Counter.Reset
+reset => Counter:getIndex_Counter.Reset
+putNGet => address_out.OUTPUTSELECT
+putNGet => address_out.OUTPUTSELECT
+putNGet => address_out.OUTPUTSELECT
+putNGet => address_out.OUTPUTSELECT
+putNGet => FFD:reg_putNget.D
+incPut => putNgetEnable.IN0
+incPut => Counter:putIndex_Counter.Enabled
+incGet => putNgetEnable.IN1
+incGet => Counter:getIndex_Counter.Enabled
+address_out[0] <= address_out.DB_MAX_OUTPUT_PORT_TYPE
+address_out[1] <= address_out.DB_MAX_OUTPUT_PORT_TYPE
+address_out[2] <= address_out.DB_MAX_OUTPUT_PORT_TYPE
+address_out[3] <= address_out.DB_MAX_OUTPUT_PORT_TYPE
+full <= full.DB_MAX_OUTPUT_PORT_TYPE
+empty <= empty.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|FFD:reg_putNget
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter
+Reset => reg:reg_4.RESET
+Clock => reg:reg_4.CLK
+Enabled => reg:reg_4.EN
+S[0] <= reg:reg_4.Q[0]
+S[1] <= reg:reg_4.Q[1]
+S[2] <= reg:reg_4.Q[2]
+S[3] <= reg:reg_4.Q[3]
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|reg:reg_4
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|reg:reg_4|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|reg:reg_4|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|reg:reg_4|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|reg:reg_4|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|ADDER:adder_4
+A[0] => FULLADDER:FA0.A
+A[1] => FULLADDER:FA1.A
+A[2] => FULLADDER:FA2.A
+A[3] => FULLADDER:FA3.A
+B[0] => FULLADDER:FA0.B
+B[1] => FULLADDER:FA1.B
+B[2] => FULLADDER:FA2.B
+B[3] => FULLADDER:FA3.B
+C0 => FULLADDER:FA0.Cin
+S[0] <= FULLADDER:FA0.R
+S[1] <= FULLADDER:FA1.R
+S[2] <= FULLADDER:FA2.R
+S[3] <= FULLADDER:FA3.R
+C4 <= FULLADDER:FA3.Cout
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|ADDER:adder_4|FULLADDER:FA0
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|ADDER:adder_4|FULLADDER:FA1
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|ADDER:adder_4|FULLADDER:FA2
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:putIndex_Counter|ADDER:adder_4|FULLADDER:FA3
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter
+Reset => reg:reg_4.RESET
+Clock => reg:reg_4.CLK
+Enabled => reg:reg_4.EN
+S[0] <= reg:reg_4.Q[0]
+S[1] <= reg:reg_4.Q[1]
+S[2] <= reg:reg_4.Q[2]
+S[3] <= reg:reg_4.Q[3]
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|reg:reg_4
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|reg:reg_4|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|reg:reg_4|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|reg:reg_4|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|reg:reg_4|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|ADDER:adder_4
+A[0] => FULLADDER:FA0.A
+A[1] => FULLADDER:FA1.A
+A[2] => FULLADDER:FA2.A
+A[3] => FULLADDER:FA3.A
+B[0] => FULLADDER:FA0.B
+B[1] => FULLADDER:FA1.B
+B[2] => FULLADDER:FA2.B
+B[3] => FULLADDER:FA3.B
+C0 => FULLADDER:FA0.Cin
+S[0] <= FULLADDER:FA0.R
+S[1] <= FULLADDER:FA1.R
+S[2] <= FULLADDER:FA2.R
+S[3] <= FULLADDER:FA3.R
+C4 <= FULLADDER:FA3.Cout
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|ADDER:adder_4|FULLADDER:FA0
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|ADDER:adder_4|FULLADDER:FA1
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|ADDER:adder_4|FULLADDER:FA2
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|Counter:getIndex_Counter|ADDER:adder_4|FULLADDER:FA3
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|Memory_Address_Control:Unit_MAC_Address|EQUALS:equal_addresses
+X[0] => equalResult[0].IN0
+X[1] => equalResult[1].IN0
+X[2] => equalResult[2].IN0
+X[3] => equalResult[3].IN0
+match[0] => equalResult[0].IN1
+match[1] => equalResult[1].IN1
+match[2] => equalResult[2].IN1
+match[3] => equalResult[3].IN1
+Q <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Ring_Buffer:Unit_ring_buffer|RAM:Unit_RAM
+address[0] => ram.RADDR
+address[0] => ram.WADDR
+address[1] => ram.RADDR1
+address[1] => ram.WADDR1
+address[2] => ram.RADDR2
+address[2] => ram.WADDR2
+address[3] => ram.RADDR3
+address[3] => ram.WADDR3
+wr => ram.WE
+din[0] => ram.DATAIN
+din[1] => ram.DATAIN1
+din[2] => ram.DATAIN2
+din[3] => ram.DATAIN3
+dout[0] <= ram.DATAOUT
+dout[1] <= ram.DATAOUT1
+dout[2] <= ram.DATAOUT2
+dout[3] <= ram.DATAOUT3
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer
+reset => Buffer_Control:Unit_buffer_control.reset
+reset => REG_Nary:Unit_register_4b.RESET
+clk => Buffer_Control:Unit_buffer_control.clk
+Data[0] => REG_Nary:Unit_register_4b.D[0]
+Data[1] => REG_Nary:Unit_register_4b.D[1]
+Data[2] => REG_Nary:Unit_register_4b.D[2]
+Data[3] => REG_Nary:Unit_register_4b.D[3]
+Load => Buffer_Control:Unit_buffer_control.Load
+Ack => Buffer_Control:Unit_buffer_control.Ack
+Obfree <= Buffer_Control:Unit_buffer_control.Obfree
+Dval <= Buffer_Control:Unit_buffer_control.Dval
+Q[0] <= REG_Nary:Unit_register_4b.Q[0]
+Q[1] <= REG_Nary:Unit_register_4b.Q[1]
+Q[2] <= REG_Nary:Unit_register_4b.Q[2]
+Q[3] <= REG_Nary:Unit_register_4b.Q[3]
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer|Buffer_Control:Unit_buffer_control
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+Load => NextState.STATE_WRITTING.DATAB
+Load => Selector0.IN1
+Load => Selector1.IN1
+Ack => NextState.STATE_WATTING.DATAA
+Ack => Selector0.IN2
+Ack => Selector1.IN2
+Obfree <= Obfree.DB_MAX_OUTPUT_PORT_TYPE
+Dval <= Dval.DB_MAX_OUTPUT_PORT_TYPE
+Wreg <= Wreg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer|REG_Nary:Unit_register_4b
+CLK => FFD:circuit_gen:0:FFD_inst.CLK
+CLK => FFD:circuit_gen:1:FFD_inst.CLK
+CLK => FFD:circuit_gen:2:FFD_inst.CLK
+CLK => FFD:circuit_gen:3:FFD_inst.CLK
+RESET => FFD:circuit_gen:0:FFD_inst.RESET
+RESET => FFD:circuit_gen:1:FFD_inst.RESET
+RESET => FFD:circuit_gen:2:FFD_inst.RESET
+RESET => FFD:circuit_gen:3:FFD_inst.RESET
+D[0] => FFD:circuit_gen:0:FFD_inst.D
+D[1] => FFD:circuit_gen:1:FFD_inst.D
+D[2] => FFD:circuit_gen:2:FFD_inst.D
+D[3] => FFD:circuit_gen:3:FFD_inst.D
+EN => FFD:circuit_gen:0:FFD_inst.EN
+EN => FFD:circuit_gen:1:FFD_inst.EN
+EN => FFD:circuit_gen:2:FFD_inst.EN
+EN => FFD:circuit_gen:3:FFD_inst.EN
+Q[0] <= FFD:circuit_gen:0:FFD_inst.Q
+Q[1] <= FFD:circuit_gen:1:FFD_inst.Q
+Q[2] <= FFD:circuit_gen:2:FFD_inst.Q
+Q[3] <= FFD:circuit_gen:3:FFD_inst.Q
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer|REG_Nary:Unit_register_4b|FFD:\circuit_gen:0:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer|REG_Nary:Unit_register_4b|FFD:\circuit_gen:1:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer|REG_Nary:Unit_register_4b|FFD:\circuit_gen:2:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|KeyBoardReader:Unit_keyboard_reader|Output_Buffer:Unit_output_buffer|REG_Nary:Unit_register_4b|FFD:\circuit_gen:3:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|UsbPort:Unit_usb_port
+inputPort[0] => sld_virtual_jtag:b2v_inst.ir_out[0]
+inputPort[1] => sld_virtual_jtag:b2v_inst.ir_out[1]
+inputPort[2] => sld_virtual_jtag:b2v_inst.ir_out[2]
+inputPort[3] => sld_virtual_jtag:b2v_inst.ir_out[3]
+inputPort[4] => sld_virtual_jtag:b2v_inst.ir_out[4]
+inputPort[5] => sld_virtual_jtag:b2v_inst.ir_out[5]
+inputPort[6] => sld_virtual_jtag:b2v_inst.ir_out[6]
+inputPort[7] => sld_virtual_jtag:b2v_inst.ir_out[7]
+outputPort[0] <= sld_virtual_jtag:b2v_inst.ir_in[0]
+outputPort[1] <= sld_virtual_jtag:b2v_inst.ir_in[1]
+outputPort[2] <= sld_virtual_jtag:b2v_inst.ir_in[2]
+outputPort[3] <= sld_virtual_jtag:b2v_inst.ir_in[3]
+outputPort[4] <= sld_virtual_jtag:b2v_inst.ir_in[4]
+outputPort[5] <= sld_virtual_jtag:b2v_inst.ir_in[5]
+outputPort[6] <= sld_virtual_jtag:b2v_inst.ir_in[6]
+outputPort[7] <= sld_virtual_jtag:b2v_inst.ir_in[7]
+
+
+|RouletteGame|UsbPort:Unit_usb_port|sld_virtual_jtag:b2v_inst
+tck <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.tck
+tdi <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.tdi
+ir_in[0] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+ir_in[1] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+ir_in[2] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+ir_in[3] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+ir_in[4] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+ir_in[5] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+ir_in[6] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+ir_in[7] <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.ir_in
+tdo => tdo.IN1
+ir_out[0] => ir_out[0].IN1
+ir_out[1] => ir_out[1].IN1
+ir_out[2] => ir_out[2].IN1
+ir_out[3] => ir_out[3].IN1
+ir_out[4] => ir_out[4].IN1
+ir_out[5] => ir_out[5].IN1
+ir_out[6] => ir_out[6].IN1
+ir_out[7] => ir_out[7].IN1
+virtual_state_cdr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_cdr
+virtual_state_sdr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_sdr
+virtual_state_e1dr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_e1dr
+virtual_state_pdr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_pdr
+virtual_state_e2dr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_e2dr
+virtual_state_udr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_udr
+virtual_state_cir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_cir
+virtual_state_uir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.virtual_state_uir
+tms <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.tms
+jtag_state_tlr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_tlr
+jtag_state_rti <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_rti
+jtag_state_sdrs <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_sdrs
+jtag_state_cdr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_cdr
+jtag_state_sdr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_sdr
+jtag_state_e1dr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_e1dr
+jtag_state_pdr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_pdr
+jtag_state_e2dr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_e2dr
+jtag_state_udr <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_udr
+jtag_state_sirs <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_sirs
+jtag_state_cir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_cir
+jtag_state_sir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_sir
+jtag_state_e1ir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_e1ir
+jtag_state_pir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_pir
+jtag_state_e2ir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_e2ir
+jtag_state_uir <= sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst.jtag_state_uir
+
+
+|RouletteGame|UsbPort:Unit_usb_port|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst
+tck <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_tck
+tdi <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_tdi
+ir_in[0] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+ir_in[1] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+ir_in[2] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+ir_in[3] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+ir_in[4] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+ir_in[5] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+ir_in[6] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+ir_in[7] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
+tdo => tdo.IN1
+ir_out[0] => ir_out[0].IN1
+ir_out[1] => ir_out[1].IN1
+ir_out[2] => ir_out[2].IN1
+ir_out[3] => ir_out[3].IN1
+ir_out[4] => ir_out[4].IN1
+ir_out[5] => ir_out[5].IN1
+ir_out[6] => ir_out[6].IN1
+ir_out[7] => ir_out[7].IN1
+virtual_state_cdr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_cdr
+virtual_state_sdr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_sdr
+virtual_state_e1dr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_e1dr
+virtual_state_pdr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_pdr
+virtual_state_e2dr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_e2dr
+virtual_state_udr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_udr
+virtual_state_cir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_cir
+virtual_state_uir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_virtual_state_uir
+tms <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_tms
+jtag_state_tlr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_tlr
+jtag_state_rti <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_rti
+jtag_state_sdrs <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_sdrs
+jtag_state_cdr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_cdr
+jtag_state_sdr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_sdr
+jtag_state_e1dr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_e1dr
+jtag_state_pdr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_pdr
+jtag_state_e2dr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_e2dr
+jtag_state_udr <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_udr
+jtag_state_sirs <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_sirs
+jtag_state_cir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_cir
+jtag_state_sir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_sir
+jtag_state_e1ir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_e1ir
+jtag_state_pir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_pir
+jtag_state_e2ir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_e2ir
+jtag_state_uir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_uir
+
+
+|RouletteGame|UsbPort:Unit_usb_port|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst
+usr_tck <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_tck
+usr_tdi <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_tdi
+usr_ir_in[0] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_ir_in[1] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_ir_in[2] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_ir_in[3] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_ir_in[4] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_ir_in[5] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_ir_in[6] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_ir_in[7] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
+usr_tdo => adapted_tdo.IN1
+usr_ir_out[0] => adapted_ir_out[0].IN1
+usr_ir_out[1] => adapted_ir_out[1].IN1
+usr_ir_out[2] => adapted_ir_out[2].IN1
+usr_ir_out[3] => adapted_ir_out[3].IN1
+usr_ir_out[4] => adapted_ir_out[4].IN1
+usr_ir_out[5] => adapted_ir_out[5].IN1
+usr_ir_out[6] => adapted_ir_out[6].IN1
+usr_ir_out[7] => adapted_ir_out[7].IN1
+usr_virtual_state_cdr <= virtual_state_cdr.DB_MAX_OUTPUT_PORT_TYPE
+usr_virtual_state_sdr <= virtual_state_sdr.DB_MAX_OUTPUT_PORT_TYPE
+usr_virtual_state_e1dr <= virtual_state_e1dr.DB_MAX_OUTPUT_PORT_TYPE
+usr_virtual_state_pdr <= virtual_state_pdr.DB_MAX_OUTPUT_PORT_TYPE
+usr_virtual_state_e2dr <= virtual_state_e2dr.DB_MAX_OUTPUT_PORT_TYPE
+usr_virtual_state_udr <= virtual_state_udr.DB_MAX_OUTPUT_PORT_TYPE
+usr_virtual_state_cir <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_cdr
+usr_virtual_state_uir <= virtual_state_uir.DB_MAX_OUTPUT_PORT_TYPE
+usr_tms <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_tms
+usr_jtag_state_tlr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_tlr
+usr_jtag_state_rti <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_rti
+usr_jtag_state_sdrs <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_sdrs
+usr_jtag_state_cdr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_cdr
+usr_jtag_state_sdr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_sdr
+usr_jtag_state_e1dr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_e1dr
+usr_jtag_state_pdr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_pdr
+usr_jtag_state_e2dr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_e2dr
+usr_jtag_state_udr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_udr
+usr_jtag_state_sirs <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_sirs
+usr_jtag_state_cir <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_cir
+usr_jtag_state_sir <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_sir
+usr_jtag_state_e1ir <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_e1ir
+usr_jtag_state_pir <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_pir
+usr_jtag_state_e2ir <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_e2ir
+usr_jtag_state_uir <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_jtag_state_uir
+raw_tck => raw_tck.IN1
+raw_tms => raw_tms.IN1
+tdi => tdi.IN1
+jtag_state_tlr => jtag_state_tlr.IN1
+jtag_state_rti => jtag_state_rti.IN1
+jtag_state_sdrs => jtag_state_sdrs.IN1
+jtag_state_cdr => jtag_state_cdr.IN1
+jtag_state_sdr => jtag_state_sdr.IN1
+jtag_state_e1dr => jtag_state_e1dr.IN1
+jtag_state_pdr => jtag_state_pdr.IN1
+jtag_state_e2dr => jtag_state_e2dr.IN1
+jtag_state_udr => jtag_state_udr.IN1
+jtag_state_sirs => jtag_state_sirs.IN1
+jtag_state_cir => jtag_state_cir.IN1
+jtag_state_sir => jtag_state_sir.IN1
+jtag_state_e1ir => jtag_state_e1ir.IN1
+jtag_state_pir => jtag_state_pir.IN1
+jtag_state_e2ir => jtag_state_e2ir.IN1
+jtag_state_uir => jtag_state_uir.IN1
+usr1 => usr1.IN1
+clr => clr.IN1
+ena => ena.IN1
+ir_in[0] => ir_in[0].IN1
+ir_in[1] => ir_in[1].IN1
+ir_in[2] => ir_in[2].IN1
+ir_in[3] => ir_in[3].IN1
+ir_in[4] => ir_in[4].IN1
+ir_in[5] => ir_in[5].IN1
+ir_in[6] => ir_in[6].IN1
+ir_in[7] => ir_in[7].IN1
+tdo <= sld_jtag_endpoint_adapter:jtag_signal_adapter.tdo
+ir_out[0] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+ir_out[1] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+ir_out[2] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+ir_out[3] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+ir_out[4] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+ir_out[5] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+ir_out[6] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+ir_out[7] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
+
+
+|RouletteGame|UsbPort:Unit_usb_port|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter
+raw_tck => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tck
+raw_tms => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tms
+tdi => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.tdi
+vir_tdi => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.vir_tdi
+jtag_state_tlr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_tlr
+jtag_state_rti => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_rti
+jtag_state_sdrs => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_sdrs
+jtag_state_cdr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_cdr
+jtag_state_sdr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_sdr
+jtag_state_e1dr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_e1dr
+jtag_state_pdr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_pdr
+jtag_state_e2dr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_e2dr
+jtag_state_udr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_udr
+jtag_state_sirs => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_sirs
+jtag_state_cir => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_cir
+jtag_state_sir => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_sir
+jtag_state_e1ir => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_e1ir
+jtag_state_pir => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_pir
+jtag_state_e2ir => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_e2ir
+jtag_state_uir => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.jtag_state_uir
+usr1 => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.usr1
+clr => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.clr
+ena => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ena
+ir_in[0] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[0]
+ir_in[1] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[1]
+ir_in[2] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[2]
+ir_in[3] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[3]
+ir_in[4] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[4]
+ir_in[5] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[5]
+ir_in[6] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[6]
+ir_in[7] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_in[7]
+tdo <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.tdo
+ir_out[0] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[0]
+ir_out[1] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[1]
+ir_out[2] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[2]
+ir_out[3] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[3]
+ir_out[4] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[4]
+ir_out[5] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[5]
+ir_out[6] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[6]
+ir_out[7] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.ir_out[7]
+adapted_tck <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_tck
+adapted_tms <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_tms
+adapted_tdi <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_tdi
+adapted_vir_tdi <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_vir_tdi
+adapted_jtag_state_tlr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_tlr
+adapted_jtag_state_rti <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_rti
+adapted_jtag_state_sdrs <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_sdrs
+adapted_jtag_state_cdr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_cdr
+adapted_jtag_state_sdr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_sdr
+adapted_jtag_state_e1dr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_e1dr
+adapted_jtag_state_pdr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_pdr
+adapted_jtag_state_e2dr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_e2dr
+adapted_jtag_state_udr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_udr
+adapted_jtag_state_sirs <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_sirs
+adapted_jtag_state_cir <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_cir
+adapted_jtag_state_sir <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_sir
+adapted_jtag_state_e1ir <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_e1ir
+adapted_jtag_state_pir <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_pir
+adapted_jtag_state_e2ir <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_e2ir
+adapted_jtag_state_uir <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_jtag_state_uir
+adapted_usr1 <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_usr1
+adapted_clr <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_clr
+adapted_ena <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ena
+adapted_ir_in[0] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[0]
+adapted_ir_in[1] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[1]
+adapted_ir_in[2] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[2]
+adapted_ir_in[3] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[3]
+adapted_ir_in[4] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[4]
+adapted_ir_in[5] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[5]
+adapted_ir_in[6] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[6]
+adapted_ir_in[7] <= sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_in[7]
+adapted_tdo => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_tdo
+adapted_ir_out[0] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[0]
+adapted_ir_out[1] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[1]
+adapted_ir_out[2] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[2]
+adapted_ir_out[3] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[3]
+adapted_ir_out[4] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[4]
+adapted_ir_out[5] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[5]
+adapted_ir_out[6] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[6]
+adapted_ir_out[7] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[7]
+
+
+|RouletteGame|UsbPort:Unit_usb_port|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
+raw_tck => adapted_tck.DATAIN
+raw_tms => adapted_tms.DATAIN
+tdi => adapted_tdi.DATAIN
+vir_tdi => adapted_vir_tdi.DATAIN
+jtag_state_tlr => adapted_jtag_state_tlr.DATAIN
+jtag_state_rti => adapted_jtag_state_rti.DATAIN
+jtag_state_sdrs => adapted_jtag_state_sdrs.DATAIN
+jtag_state_cdr => adapted_jtag_state_cdr.DATAIN
+jtag_state_sdr => adapted_jtag_state_sdr.DATAIN
+jtag_state_e1dr => adapted_jtag_state_e1dr.DATAIN
+jtag_state_pdr => adapted_jtag_state_pdr.DATAIN
+jtag_state_e2dr => adapted_jtag_state_e2dr.DATAIN
+jtag_state_udr => adapted_jtag_state_udr.DATAIN
+jtag_state_sirs => adapted_jtag_state_sirs.DATAIN
+jtag_state_cir => adapted_jtag_state_cir.DATAIN
+jtag_state_sir => adapted_jtag_state_sir.DATAIN
+jtag_state_e1ir => adapted_jtag_state_e1ir.DATAIN
+jtag_state_pir => adapted_jtag_state_pir.DATAIN
+jtag_state_e2ir => adapted_jtag_state_e2ir.DATAIN
+jtag_state_uir => adapted_jtag_state_uir.DATAIN
+usr1 => adapted_usr1.DATAIN
+clr => adapted_clr.DATAIN
+ena => adapted_ena.DATAIN
+ir_in[0] => adapted_ir_in[0].DATAIN
+ir_in[1] => adapted_ir_in[1].DATAIN
+ir_in[2] => adapted_ir_in[2].DATAIN
+ir_in[3] => adapted_ir_in[3].DATAIN
+ir_in[4] => adapted_ir_in[4].DATAIN
+ir_in[5] => adapted_ir_in[5].DATAIN
+ir_in[6] => adapted_ir_in[6].DATAIN
+ir_in[7] => adapted_ir_in[7].DATAIN
+tdo <= adapted_tdo.DB_MAX_OUTPUT_PORT_TYPE
+ir_out[0] <= adapted_ir_out[0].DB_MAX_OUTPUT_PORT_TYPE
+ir_out[1] <= adapted_ir_out[1].DB_MAX_OUTPUT_PORT_TYPE
+ir_out[2] <= adapted_ir_out[2].DB_MAX_OUTPUT_PORT_TYPE
+ir_out[3] <= adapted_ir_out[3].DB_MAX_OUTPUT_PORT_TYPE
+ir_out[4] <= adapted_ir_out[4].DB_MAX_OUTPUT_PORT_TYPE
+ir_out[5] <= adapted_ir_out[5].DB_MAX_OUTPUT_PORT_TYPE
+ir_out[6] <= adapted_ir_out[6].DB_MAX_OUTPUT_PORT_TYPE
+ir_out[7] <= adapted_ir_out[7].DB_MAX_OUTPUT_PORT_TYPE
+adapted_tck <= raw_tck.DB_MAX_OUTPUT_PORT_TYPE
+adapted_tms <= raw_tms.DB_MAX_OUTPUT_PORT_TYPE
+adapted_tdi <= tdi.DB_MAX_OUTPUT_PORT_TYPE
+adapted_vir_tdi <= vir_tdi.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_tlr <= jtag_state_tlr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_rti <= jtag_state_rti.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_sdrs <= jtag_state_sdrs.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_cdr <= jtag_state_cdr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_sdr <= jtag_state_sdr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_e1dr <= jtag_state_e1dr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_pdr <= jtag_state_pdr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_e2dr <= jtag_state_e2dr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_udr <= jtag_state_udr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_sirs <= jtag_state_sirs.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_cir <= jtag_state_cir.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_sir <= jtag_state_sir.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_e1ir <= jtag_state_e1ir.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_pir <= jtag_state_pir.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_e2ir <= jtag_state_e2ir.DB_MAX_OUTPUT_PORT_TYPE
+adapted_jtag_state_uir <= jtag_state_uir.DB_MAX_OUTPUT_PORT_TYPE
+adapted_usr1 <= usr1.DB_MAX_OUTPUT_PORT_TYPE
+adapted_clr <= clr.DB_MAX_OUTPUT_PORT_TYPE
+adapted_ena <= ena.DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[0] <= ir_in[0].DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[1] <= ir_in[1].DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[2] <= ir_in[2].DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[3] <= ir_in[3].DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[4] <= ir_in[4].DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[5] <= ir_in[5].DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[6] <= ir_in[6].DB_MAX_OUTPUT_PORT_TYPE
+adapted_ir_in[7] <= ir_in[7].DB_MAX_OUTPUT_PORT_TYPE
+adapted_tdo => tdo.DATAIN
+adapted_ir_out[0] => ir_out[0].DATAIN
+adapted_ir_out[1] => ir_out[1].DATAIN
+adapted_ir_out[2] => ir_out[2].DATAIN
+adapted_ir_out[3] => ir_out[3].DATAIN
+adapted_ir_out[4] => ir_out[4].DATAIN
+adapted_ir_out[5] => ir_out[5].DATAIN
+adapted_ir_out[6] => ir_out[6].DATAIN
+adapted_ir_out[7] => ir_out[7].DATAIN
+
+
+|RouletteGame|SRC:Unit_Serial_SRC
+reset => Serial_Receiver_Generic:U_Serial_Receiver.reset
+reset => Roulette_Dispatcher:U_Roulette_Dispatcher.reset
+Mclk => Serial_Receiver_Generic:U_Serial_Receiver.clk
+Mclk => Roulette_Dispatcher:U_Roulette_Dispatcher.clk
+SS => Serial_Receiver_Generic:U_Serial_Receiver.SS
+SCLK => Serial_Receiver_Generic:U_Serial_Receiver.SCLK
+SDX => Serial_Receiver_Generic:U_Serial_Receiver.SDX
+E <= Roulette_Dispatcher:U_Roulette_Dispatcher.WrD
+Dout[0] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[0]
+Dout[1] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[1]
+Dout[2] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[2]
+Dout[3] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[3]
+Dout[4] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[4]
+Dout[5] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[5]
+Dout[6] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[6]
+Dout[7] <= Roulette_Dispatcher:U_Roulette_Dispatcher.Dout[7]
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver
+dataMatch[0] => EQUALS:U_EQUALS_8.match[0]
+dataMatch[1] => EQUALS:U_EQUALS_8.match[1]
+dataMatch[2] => EQUALS:U_EQUALS_8.match[2]
+dataMatch[3] => EQUALS:U_EQUALS_8.match[3]
+parityMatch[0] => EQUALS:U_EQUALS_9.match[0]
+parityMatch[1] => EQUALS:U_EQUALS_9.match[1]
+parityMatch[2] => EQUALS:U_EQUALS_9.match[2]
+parityMatch[3] => EQUALS:U_EQUALS_9.match[3]
+reset => Shift_Reg_Nary:U_Shift_Register_Nary.reset
+reset => Serial_Control:U_Serial_Control.reset
+clk => Serial_Control:U_Serial_Control.clk
+SS => Serial_Control:U_Serial_Control.enRx
+SCLK => COUNTER:U_Counter.Clock
+SCLK => Shift_Reg_Nary:U_Shift_Register_Nary.clk
+SCLK => Parity_Check:U_PARITY_CHECK.serialClock
+SDX => Parity_Check:U_PARITY_CHECK.serialData
+SDX => Shift_Reg_Nary:U_Shift_Register_Nary.Data
+accept => Serial_Control:U_Serial_Control.accept
+DXval <= Serial_Control:U_Serial_Control.DXval
+Data[0] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[0]
+Data[1] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[1]
+Data[2] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[2]
+Data[3] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[3]
+Data[4] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[4]
+Data[5] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[5]
+Data[6] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[6]
+Data[7] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[7]
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary
+Data => FFD:circuit_gen:7:FFD_inst.D
+clk => FFD:circuit_gen:0:FFD_inst.CLK
+clk => FFD:circuit_gen:1:FFD_inst.CLK
+clk => FFD:circuit_gen:2:FFD_inst.CLK
+clk => FFD:circuit_gen:3:FFD_inst.CLK
+clk => FFD:circuit_gen:4:FFD_inst.CLK
+clk => FFD:circuit_gen:5:FFD_inst.CLK
+clk => FFD:circuit_gen:6:FFD_inst.CLK
+clk => FFD:circuit_gen:7:FFD_inst.CLK
+E => FFD:circuit_gen:0:FFD_inst.EN
+E => FFD:circuit_gen:1:FFD_inst.EN
+E => FFD:circuit_gen:2:FFD_inst.EN
+E => FFD:circuit_gen:3:FFD_inst.EN
+E => FFD:circuit_gen:4:FFD_inst.EN
+E => FFD:circuit_gen:5:FFD_inst.EN
+E => FFD:circuit_gen:6:FFD_inst.EN
+E => FFD:circuit_gen:7:FFD_inst.EN
+reset => FFD:circuit_gen:0:FFD_inst.RESET
+reset => FFD:circuit_gen:1:FFD_inst.RESET
+reset => FFD:circuit_gen:2:FFD_inst.RESET
+reset => FFD:circuit_gen:3:FFD_inst.RESET
+reset => FFD:circuit_gen:4:FFD_inst.RESET
+reset => FFD:circuit_gen:5:FFD_inst.RESET
+reset => FFD:circuit_gen:6:FFD_inst.RESET
+reset => FFD:circuit_gen:7:FFD_inst.RESET
+Sout <= FFD:circuit_gen:7:FFD_inst.Q
+D[0] <= FFD:circuit_gen:0:FFD_inst.Q
+D[1] <= FFD:circuit_gen:1:FFD_inst.Q
+D[2] <= FFD:circuit_gen:2:FFD_inst.Q
+D[3] <= FFD:circuit_gen:3:FFD_inst.Q
+D[4] <= FFD:circuit_gen:4:FFD_inst.Q
+D[5] <= FFD:circuit_gen:5:FFD_inst.Q
+D[6] <= FFD:circuit_gen:6:FFD_inst.Q
+D[7] <= FFD:circuit_gen:7:FFD_inst.Q
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:0:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:1:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:2:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:3:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:4:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:5:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:6:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:7:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|EQUALS:U_EQUALS_8
+X[0] => equalResult[0].IN0
+X[1] => equalResult[1].IN0
+X[2] => equalResult[2].IN0
+X[3] => equalResult[3].IN0
+match[0] => equalResult[0].IN1
+match[1] => equalResult[1].IN1
+match[2] => equalResult[2].IN1
+match[3] => equalResult[3].IN1
+Q <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|EQUALS:U_EQUALS_9
+X[0] => equalResult[0].IN0
+X[1] => equalResult[1].IN0
+X[2] => equalResult[2].IN0
+X[3] => equalResult[3].IN0
+match[0] => equalResult[0].IN1
+match[1] => equalResult[1].IN1
+match[2] => equalResult[2].IN1
+match[3] => equalResult[3].IN1
+Q <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter
+Reset => reg:reg_4.RESET
+Clock => reg:reg_4.CLK
+Enabled => reg:reg_4.EN
+S[0] <= reg:reg_4.Q[0]
+S[1] <= reg:reg_4.Q[1]
+S[2] <= reg:reg_4.Q[2]
+S[3] <= reg:reg_4.Q[3]
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|reg:reg_4
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4
+A[0] => FULLADDER:FA0.A
+A[1] => FULLADDER:FA1.A
+A[2] => FULLADDER:FA2.A
+A[3] => FULLADDER:FA3.A
+B[0] => FULLADDER:FA0.B
+B[1] => FULLADDER:FA1.B
+B[2] => FULLADDER:FA2.B
+B[3] => FULLADDER:FA3.B
+C0 => FULLADDER:FA0.Cin
+S[0] <= FULLADDER:FA0.R
+S[1] <= FULLADDER:FA1.R
+S[2] <= FULLADDER:FA2.R
+S[3] <= FULLADDER:FA3.R
+C4 <= FULLADDER:FA3.Cout
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA0
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA1
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA2
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA3
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Serial_Control:U_Serial_Control
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+enRx => NextState.OUTPUTSELECT
+enRx => NextState.OUTPUTSELECT
+enRx => GenerateNextState.IN0
+enRx => GenerateNextState.IN0
+enRx => Selector0.IN4
+enRx => Selector1.IN1
+enRx => GenerateNextState.IN0
+accept => NextState.STATE_ACCEPT.DATAB
+accept => Selector0.IN2
+accept => Selector3.IN2
+pFlag => GenerateNextState.IN1
+pFlag => GenerateNextState.IN1
+dFlag => GenerateNextState.IN1
+RXerror => GenerateNextState.IN1
+wr <= wr.DB_MAX_OUTPUT_PORT_TYPE
+init <= init.DB_MAX_OUTPUT_PORT_TYPE
+DXval <= DXval.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Parity_Check:U_PARITY_CHECK
+serialData => resultXor.IN1
+serialClock => FFD:flipFlop.CLK
+init => FFD:flipFlop.RESET
+error <= FFD:flipFlop.Q
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Serial_Receiver_Generic:U_Serial_Receiver|Parity_Check:U_PARITY_CHECK|FFD:flipFlop
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SRC:Unit_Serial_SRC|Roulette_Dispatcher:U_Roulette_Dispatcher
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+Dval => NextState.STATE_VALID.DATAB
+Dval => Selector1.IN2
+Dval => Selector0.IN1
+Din[0] => Dout[0].DATAIN
+Din[1] => Dout[1].DATAIN
+Din[2] => Dout[2].DATAIN
+Din[3] => Dout[3].DATAIN
+Din[4] => Dout[4].DATAIN
+Din[5] => Dout[5].DATAIN
+Din[6] => Dout[6].DATAIN
+Din[7] => Dout[7].DATAIN
+WrD <= WrD.DB_MAX_OUTPUT_PORT_TYPE
+Dout[0] <= Din[0].DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Din[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Din[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Din[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Din[4].DB_MAX_OUTPUT_PORT_TYPE
+Dout[5] <= Din[5].DB_MAX_OUTPUT_PORT_TYPE
+Dout[6] <= Din[6].DB_MAX_OUTPUT_PORT_TYPE
+Dout[7] <= Din[7].DB_MAX_OUTPUT_PORT_TYPE
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display
+set => reg_5bit:circuit_gen:0:in_reg.CLK
+set => reg_5bit:circuit_gen:0:out_reg.CLK
+set => reg_5bit:circuit_gen:1:in_reg.CLK
+set => reg_5bit:circuit_gen:1:out_reg.CLK
+set => reg_5bit:circuit_gen:2:in_reg.CLK
+set => reg_5bit:circuit_gen:2:out_reg.CLK
+set => reg_5bit:circuit_gen:3:in_reg.CLK
+set => reg_5bit:circuit_gen:3:out_reg.CLK
+set => reg_5bit:circuit_gen:4:in_reg.CLK
+set => reg_5bit:circuit_gen:4:out_reg.CLK
+set => reg_5bit:circuit_gen:5:in_reg.CLK
+set => reg_5bit:circuit_gen:5:out_reg.CLK
+set => FFD:clear_reg.CLK
+cmd[0] => dec_3_8:decoder.addr[0]
+cmd[1] => dec_3_8:decoder.addr[1]
+cmd[2] => dec_3_8:decoder.addr[2]
+data[0] => reg_5bit:circuit_gen:0:in_reg.D[0]
+data[0] => reg_5bit:circuit_gen:1:in_reg.D[0]
+data[0] => reg_5bit:circuit_gen:2:in_reg.D[0]
+data[0] => reg_5bit:circuit_gen:3:in_reg.D[0]
+data[0] => reg_5bit:circuit_gen:4:in_reg.D[0]
+data[0] => reg_5bit:circuit_gen:5:in_reg.D[0]
+data[0] => FFD:clear_reg.D
+data[1] => reg_5bit:circuit_gen:0:in_reg.D[1]
+data[1] => reg_5bit:circuit_gen:1:in_reg.D[1]
+data[1] => reg_5bit:circuit_gen:2:in_reg.D[1]
+data[1] => reg_5bit:circuit_gen:3:in_reg.D[1]
+data[1] => reg_5bit:circuit_gen:4:in_reg.D[1]
+data[1] => reg_5bit:circuit_gen:5:in_reg.D[1]
+data[2] => reg_5bit:circuit_gen:0:in_reg.D[2]
+data[2] => reg_5bit:circuit_gen:1:in_reg.D[2]
+data[2] => reg_5bit:circuit_gen:2:in_reg.D[2]
+data[2] => reg_5bit:circuit_gen:3:in_reg.D[2]
+data[2] => reg_5bit:circuit_gen:4:in_reg.D[2]
+data[2] => reg_5bit:circuit_gen:5:in_reg.D[2]
+data[3] => reg_5bit:circuit_gen:0:in_reg.D[3]
+data[3] => reg_5bit:circuit_gen:1:in_reg.D[3]
+data[3] => reg_5bit:circuit_gen:2:in_reg.D[3]
+data[3] => reg_5bit:circuit_gen:3:in_reg.D[3]
+data[3] => reg_5bit:circuit_gen:4:in_reg.D[3]
+data[3] => reg_5bit:circuit_gen:5:in_reg.D[3]
+data[4] => reg_5bit:circuit_gen:0:in_reg.D[4]
+data[4] => reg_5bit:circuit_gen:1:in_reg.D[4]
+data[4] => reg_5bit:circuit_gen:2:in_reg.D[4]
+data[4] => reg_5bit:circuit_gen:3:in_reg.D[4]
+data[4] => reg_5bit:circuit_gen:4:in_reg.D[4]
+data[4] => reg_5bit:circuit_gen:5:in_reg.D[4]
+HEX0[0] <= dec2hex:circuit_gen:0:hex_digit.dOut[0]
+HEX0[1] <= dec2hex:circuit_gen:0:hex_digit.dOut[1]
+HEX0[2] <= dec2hex:circuit_gen:0:hex_digit.dOut[2]
+HEX0[3] <= dec2hex:circuit_gen:0:hex_digit.dOut[3]
+HEX0[4] <= dec2hex:circuit_gen:0:hex_digit.dOut[4]
+HEX0[5] <= dec2hex:circuit_gen:0:hex_digit.dOut[5]
+HEX0[6] <= dec2hex:circuit_gen:0:hex_digit.dOut[6]
+HEX0[7] <= dec2hex:circuit_gen:0:hex_digit.dOut[7]
+HEX1[0] <= dec2hex:circuit_gen:1:hex_digit.dOut[0]
+HEX1[1] <= dec2hex:circuit_gen:1:hex_digit.dOut[1]
+HEX1[2] <= dec2hex:circuit_gen:1:hex_digit.dOut[2]
+HEX1[3] <= dec2hex:circuit_gen:1:hex_digit.dOut[3]
+HEX1[4] <= dec2hex:circuit_gen:1:hex_digit.dOut[4]
+HEX1[5] <= dec2hex:circuit_gen:1:hex_digit.dOut[5]
+HEX1[6] <= dec2hex:circuit_gen:1:hex_digit.dOut[6]
+HEX1[7] <= dec2hex:circuit_gen:1:hex_digit.dOut[7]
+HEX2[0] <= dec2hex:circuit_gen:2:hex_digit.dOut[0]
+HEX2[1] <= dec2hex:circuit_gen:2:hex_digit.dOut[1]
+HEX2[2] <= dec2hex:circuit_gen:2:hex_digit.dOut[2]
+HEX2[3] <= dec2hex:circuit_gen:2:hex_digit.dOut[3]
+HEX2[4] <= dec2hex:circuit_gen:2:hex_digit.dOut[4]
+HEX2[5] <= dec2hex:circuit_gen:2:hex_digit.dOut[5]
+HEX2[6] <= dec2hex:circuit_gen:2:hex_digit.dOut[6]
+HEX2[7] <= dec2hex:circuit_gen:2:hex_digit.dOut[7]
+HEX3[0] <= dec2hex:circuit_gen:3:hex_digit.dOut[0]
+HEX3[1] <= dec2hex:circuit_gen:3:hex_digit.dOut[1]
+HEX3[2] <= dec2hex:circuit_gen:3:hex_digit.dOut[2]
+HEX3[3] <= dec2hex:circuit_gen:3:hex_digit.dOut[3]
+HEX3[4] <= dec2hex:circuit_gen:3:hex_digit.dOut[4]
+HEX3[5] <= dec2hex:circuit_gen:3:hex_digit.dOut[5]
+HEX3[6] <= dec2hex:circuit_gen:3:hex_digit.dOut[6]
+HEX3[7] <= dec2hex:circuit_gen:3:hex_digit.dOut[7]
+HEX4[0] <= dec2hex:circuit_gen:4:hex_digit.dOut[0]
+HEX4[1] <= dec2hex:circuit_gen:4:hex_digit.dOut[1]
+HEX4[2] <= dec2hex:circuit_gen:4:hex_digit.dOut[2]
+HEX4[3] <= dec2hex:circuit_gen:4:hex_digit.dOut[3]
+HEX4[4] <= dec2hex:circuit_gen:4:hex_digit.dOut[4]
+HEX4[5] <= dec2hex:circuit_gen:4:hex_digit.dOut[5]
+HEX4[6] <= dec2hex:circuit_gen:4:hex_digit.dOut[6]
+HEX4[7] <= dec2hex:circuit_gen:4:hex_digit.dOut[7]
+HEX5[0] <= dec2hex:circuit_gen:5:hex_digit.dOut[0]
+HEX5[1] <= dec2hex:circuit_gen:5:hex_digit.dOut[1]
+HEX5[2] <= dec2hex:circuit_gen:5:hex_digit.dOut[2]
+HEX5[3] <= dec2hex:circuit_gen:5:hex_digit.dOut[3]
+HEX5[4] <= dec2hex:circuit_gen:5:hex_digit.dOut[4]
+HEX5[5] <= dec2hex:circuit_gen:5:hex_digit.dOut[5]
+HEX5[6] <= dec2hex:circuit_gen:5:hex_digit.dOut[6]
+HEX5[7] <= dec2hex:circuit_gen:5:hex_digit.dOut[7]
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|dec_3_8:decoder
+addr[0] => dout.IN1
+addr[0] => dout.IN1
+addr[0] => dout.IN1
+addr[0] => dout.IN1
+addr[0] => dout.IN1
+addr[0] => dout.IN1
+addr[0] => dout.IN1
+addr[0] => dout.IN1
+addr[1] => dout.IN1
+addr[1] => dout.IN1
+addr[1] => dout.IN1
+addr[1] => dout.IN1
+addr[2] => dout.IN0
+addr[2] => dout.IN0
+en => dout.IN1
+en => dout.IN1
+dout[0] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= dout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:in_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:in_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:in_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:in_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:in_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:in_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:out_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:out_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:out_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:out_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:out_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:0:out_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|dec2hex:\circuit_gen:0:hex_digit
+d[0] => Equal0.IN0
+d[0] => Equal1.IN4
+d[0] => Equal2.IN1
+d[0] => Equal3.IN4
+d[0] => Equal4.IN1
+d[0] => Equal5.IN4
+d[0] => Equal6.IN2
+d[0] => Equal7.IN4
+d[0] => Equal8.IN1
+d[0] => Equal9.IN4
+d[0] => Equal10.IN2
+d[0] => Equal11.IN4
+d[0] => Equal12.IN2
+d[0] => Equal13.IN4
+d[0] => Equal14.IN3
+d[0] => Equal15.IN4
+d[0] => Equal16.IN1
+d[0] => Equal17.IN4
+d[0] => Equal18.IN2
+d[0] => Equal19.IN4
+d[0] => Equal20.IN2
+d[0] => Equal21.IN4
+d[0] => Equal22.IN3
+d[0] => Equal23.IN4
+d[0] => Equal24.IN2
+d[0] => Equal25.IN4
+d[0] => Equal26.IN3
+d[0] => Equal27.IN4
+d[0] => Equal28.IN3
+d[0] => Equal29.IN4
+d[0] => Equal30.IN4
+d[1] => Equal0.IN4
+d[1] => Equal1.IN0
+d[1] => Equal2.IN0
+d[1] => Equal3.IN3
+d[1] => Equal4.IN4
+d[1] => Equal5.IN1
+d[1] => Equal6.IN1
+d[1] => Equal7.IN3
+d[1] => Equal8.IN4
+d[1] => Equal9.IN1
+d[1] => Equal10.IN1
+d[1] => Equal11.IN3
+d[1] => Equal12.IN4
+d[1] => Equal13.IN2
+d[1] => Equal14.IN2
+d[1] => Equal15.IN3
+d[1] => Equal16.IN4
+d[1] => Equal17.IN1
+d[1] => Equal18.IN1
+d[1] => Equal19.IN3
+d[1] => Equal20.IN4
+d[1] => Equal21.IN2
+d[1] => Equal22.IN2
+d[1] => Equal23.IN3
+d[1] => Equal24.IN4
+d[1] => Equal25.IN2
+d[1] => Equal26.IN2
+d[1] => Equal27.IN3
+d[1] => Equal28.IN4
+d[1] => Equal29.IN3
+d[1] => Equal30.IN3
+d[2] => Equal0.IN3
+d[2] => Equal1.IN3
+d[2] => Equal2.IN4
+d[2] => Equal3.IN0
+d[2] => Equal4.IN0
+d[2] => Equal5.IN0
+d[2] => Equal6.IN0
+d[2] => Equal7.IN2
+d[2] => Equal8.IN3
+d[2] => Equal9.IN3
+d[2] => Equal10.IN4
+d[2] => Equal11.IN1
+d[2] => Equal12.IN1
+d[2] => Equal13.IN1
+d[2] => Equal14.IN1
+d[2] => Equal15.IN2
+d[2] => Equal16.IN3
+d[2] => Equal17.IN3
+d[2] => Equal18.IN4
+d[2] => Equal19.IN1
+d[2] => Equal20.IN1
+d[2] => Equal21.IN1
+d[2] => Equal22.IN1
+d[2] => Equal23.IN2
+d[2] => Equal24.IN3
+d[2] => Equal25.IN3
+d[2] => Equal26.IN4
+d[2] => Equal27.IN2
+d[2] => Equal28.IN2
+d[2] => Equal29.IN2
+d[2] => Equal30.IN2
+d[3] => Equal0.IN2
+d[3] => Equal1.IN2
+d[3] => Equal2.IN3
+d[3] => Equal3.IN2
+d[3] => Equal4.IN3
+d[3] => Equal5.IN3
+d[3] => Equal6.IN4
+d[3] => Equal7.IN0
+d[3] => Equal8.IN0
+d[3] => Equal9.IN0
+d[3] => Equal10.IN0
+d[3] => Equal11.IN0
+d[3] => Equal12.IN0
+d[3] => Equal13.IN0
+d[3] => Equal14.IN0
+d[3] => Equal15.IN1
+d[3] => Equal16.IN2
+d[3] => Equal17.IN2
+d[3] => Equal18.IN3
+d[3] => Equal19.IN2
+d[3] => Equal20.IN3
+d[3] => Equal21.IN3
+d[3] => Equal22.IN4
+d[3] => Equal23.IN1
+d[3] => Equal24.IN1
+d[3] => Equal25.IN1
+d[3] => Equal26.IN1
+d[3] => Equal27.IN1
+d[3] => Equal28.IN1
+d[3] => Equal29.IN1
+d[3] => Equal30.IN1
+d[4] => Equal0.IN1
+d[4] => Equal1.IN1
+d[4] => Equal2.IN2
+d[4] => Equal3.IN1
+d[4] => Equal4.IN2
+d[4] => Equal5.IN2
+d[4] => Equal6.IN3
+d[4] => Equal7.IN1
+d[4] => Equal8.IN2
+d[4] => Equal9.IN2
+d[4] => Equal10.IN3
+d[4] => Equal11.IN2
+d[4] => Equal12.IN3
+d[4] => Equal13.IN3
+d[4] => Equal14.IN4
+d[4] => Equal15.IN0
+d[4] => Equal16.IN0
+d[4] => Equal17.IN0
+d[4] => Equal18.IN0
+d[4] => Equal19.IN0
+d[4] => Equal20.IN0
+d[4] => Equal21.IN0
+d[4] => Equal22.IN0
+d[4] => Equal23.IN0
+d[4] => Equal24.IN0
+d[4] => Equal25.IN0
+d[4] => Equal26.IN0
+d[4] => Equal27.IN0
+d[4] => Equal28.IN0
+d[4] => Equal29.IN0
+d[4] => Equal30.IN0
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+dOut[0] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[1] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[2] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[3] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[4] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[5] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[6] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[7] <= <VCC>
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:in_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:in_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:in_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:in_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:in_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:in_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:out_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:out_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:out_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:out_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:out_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:1:out_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|dec2hex:\circuit_gen:1:hex_digit
+d[0] => Equal0.IN0
+d[0] => Equal1.IN4
+d[0] => Equal2.IN1
+d[0] => Equal3.IN4
+d[0] => Equal4.IN1
+d[0] => Equal5.IN4
+d[0] => Equal6.IN2
+d[0] => Equal7.IN4
+d[0] => Equal8.IN1
+d[0] => Equal9.IN4
+d[0] => Equal10.IN2
+d[0] => Equal11.IN4
+d[0] => Equal12.IN2
+d[0] => Equal13.IN4
+d[0] => Equal14.IN3
+d[0] => Equal15.IN4
+d[0] => Equal16.IN1
+d[0] => Equal17.IN4
+d[0] => Equal18.IN2
+d[0] => Equal19.IN4
+d[0] => Equal20.IN2
+d[0] => Equal21.IN4
+d[0] => Equal22.IN3
+d[0] => Equal23.IN4
+d[0] => Equal24.IN2
+d[0] => Equal25.IN4
+d[0] => Equal26.IN3
+d[0] => Equal27.IN4
+d[0] => Equal28.IN3
+d[0] => Equal29.IN4
+d[0] => Equal30.IN4
+d[1] => Equal0.IN4
+d[1] => Equal1.IN0
+d[1] => Equal2.IN0
+d[1] => Equal3.IN3
+d[1] => Equal4.IN4
+d[1] => Equal5.IN1
+d[1] => Equal6.IN1
+d[1] => Equal7.IN3
+d[1] => Equal8.IN4
+d[1] => Equal9.IN1
+d[1] => Equal10.IN1
+d[1] => Equal11.IN3
+d[1] => Equal12.IN4
+d[1] => Equal13.IN2
+d[1] => Equal14.IN2
+d[1] => Equal15.IN3
+d[1] => Equal16.IN4
+d[1] => Equal17.IN1
+d[1] => Equal18.IN1
+d[1] => Equal19.IN3
+d[1] => Equal20.IN4
+d[1] => Equal21.IN2
+d[1] => Equal22.IN2
+d[1] => Equal23.IN3
+d[1] => Equal24.IN4
+d[1] => Equal25.IN2
+d[1] => Equal26.IN2
+d[1] => Equal27.IN3
+d[1] => Equal28.IN4
+d[1] => Equal29.IN3
+d[1] => Equal30.IN3
+d[2] => Equal0.IN3
+d[2] => Equal1.IN3
+d[2] => Equal2.IN4
+d[2] => Equal3.IN0
+d[2] => Equal4.IN0
+d[2] => Equal5.IN0
+d[2] => Equal6.IN0
+d[2] => Equal7.IN2
+d[2] => Equal8.IN3
+d[2] => Equal9.IN3
+d[2] => Equal10.IN4
+d[2] => Equal11.IN1
+d[2] => Equal12.IN1
+d[2] => Equal13.IN1
+d[2] => Equal14.IN1
+d[2] => Equal15.IN2
+d[2] => Equal16.IN3
+d[2] => Equal17.IN3
+d[2] => Equal18.IN4
+d[2] => Equal19.IN1
+d[2] => Equal20.IN1
+d[2] => Equal21.IN1
+d[2] => Equal22.IN1
+d[2] => Equal23.IN2
+d[2] => Equal24.IN3
+d[2] => Equal25.IN3
+d[2] => Equal26.IN4
+d[2] => Equal27.IN2
+d[2] => Equal28.IN2
+d[2] => Equal29.IN2
+d[2] => Equal30.IN2
+d[3] => Equal0.IN2
+d[3] => Equal1.IN2
+d[3] => Equal2.IN3
+d[3] => Equal3.IN2
+d[3] => Equal4.IN3
+d[3] => Equal5.IN3
+d[3] => Equal6.IN4
+d[3] => Equal7.IN0
+d[3] => Equal8.IN0
+d[3] => Equal9.IN0
+d[3] => Equal10.IN0
+d[3] => Equal11.IN0
+d[3] => Equal12.IN0
+d[3] => Equal13.IN0
+d[3] => Equal14.IN0
+d[3] => Equal15.IN1
+d[3] => Equal16.IN2
+d[3] => Equal17.IN2
+d[3] => Equal18.IN3
+d[3] => Equal19.IN2
+d[3] => Equal20.IN3
+d[3] => Equal21.IN3
+d[3] => Equal22.IN4
+d[3] => Equal23.IN1
+d[3] => Equal24.IN1
+d[3] => Equal25.IN1
+d[3] => Equal26.IN1
+d[3] => Equal27.IN1
+d[3] => Equal28.IN1
+d[3] => Equal29.IN1
+d[3] => Equal30.IN1
+d[4] => Equal0.IN1
+d[4] => Equal1.IN1
+d[4] => Equal2.IN2
+d[4] => Equal3.IN1
+d[4] => Equal4.IN2
+d[4] => Equal5.IN2
+d[4] => Equal6.IN3
+d[4] => Equal7.IN1
+d[4] => Equal8.IN2
+d[4] => Equal9.IN2
+d[4] => Equal10.IN3
+d[4] => Equal11.IN2
+d[4] => Equal12.IN3
+d[4] => Equal13.IN3
+d[4] => Equal14.IN4
+d[4] => Equal15.IN0
+d[4] => Equal16.IN0
+d[4] => Equal17.IN0
+d[4] => Equal18.IN0
+d[4] => Equal19.IN0
+d[4] => Equal20.IN0
+d[4] => Equal21.IN0
+d[4] => Equal22.IN0
+d[4] => Equal23.IN0
+d[4] => Equal24.IN0
+d[4] => Equal25.IN0
+d[4] => Equal26.IN0
+d[4] => Equal27.IN0
+d[4] => Equal28.IN0
+d[4] => Equal29.IN0
+d[4] => Equal30.IN0
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+dOut[0] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[1] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[2] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[3] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[4] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[5] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[6] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[7] <= <VCC>
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:in_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:in_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:in_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:in_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:in_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:in_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:out_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:out_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:out_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:out_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:out_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:2:out_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|dec2hex:\circuit_gen:2:hex_digit
+d[0] => Equal0.IN0
+d[0] => Equal1.IN4
+d[0] => Equal2.IN1
+d[0] => Equal3.IN4
+d[0] => Equal4.IN1
+d[0] => Equal5.IN4
+d[0] => Equal6.IN2
+d[0] => Equal7.IN4
+d[0] => Equal8.IN1
+d[0] => Equal9.IN4
+d[0] => Equal10.IN2
+d[0] => Equal11.IN4
+d[0] => Equal12.IN2
+d[0] => Equal13.IN4
+d[0] => Equal14.IN3
+d[0] => Equal15.IN4
+d[0] => Equal16.IN1
+d[0] => Equal17.IN4
+d[0] => Equal18.IN2
+d[0] => Equal19.IN4
+d[0] => Equal20.IN2
+d[0] => Equal21.IN4
+d[0] => Equal22.IN3
+d[0] => Equal23.IN4
+d[0] => Equal24.IN2
+d[0] => Equal25.IN4
+d[0] => Equal26.IN3
+d[0] => Equal27.IN4
+d[0] => Equal28.IN3
+d[0] => Equal29.IN4
+d[0] => Equal30.IN4
+d[1] => Equal0.IN4
+d[1] => Equal1.IN0
+d[1] => Equal2.IN0
+d[1] => Equal3.IN3
+d[1] => Equal4.IN4
+d[1] => Equal5.IN1
+d[1] => Equal6.IN1
+d[1] => Equal7.IN3
+d[1] => Equal8.IN4
+d[1] => Equal9.IN1
+d[1] => Equal10.IN1
+d[1] => Equal11.IN3
+d[1] => Equal12.IN4
+d[1] => Equal13.IN2
+d[1] => Equal14.IN2
+d[1] => Equal15.IN3
+d[1] => Equal16.IN4
+d[1] => Equal17.IN1
+d[1] => Equal18.IN1
+d[1] => Equal19.IN3
+d[1] => Equal20.IN4
+d[1] => Equal21.IN2
+d[1] => Equal22.IN2
+d[1] => Equal23.IN3
+d[1] => Equal24.IN4
+d[1] => Equal25.IN2
+d[1] => Equal26.IN2
+d[1] => Equal27.IN3
+d[1] => Equal28.IN4
+d[1] => Equal29.IN3
+d[1] => Equal30.IN3
+d[2] => Equal0.IN3
+d[2] => Equal1.IN3
+d[2] => Equal2.IN4
+d[2] => Equal3.IN0
+d[2] => Equal4.IN0
+d[2] => Equal5.IN0
+d[2] => Equal6.IN0
+d[2] => Equal7.IN2
+d[2] => Equal8.IN3
+d[2] => Equal9.IN3
+d[2] => Equal10.IN4
+d[2] => Equal11.IN1
+d[2] => Equal12.IN1
+d[2] => Equal13.IN1
+d[2] => Equal14.IN1
+d[2] => Equal15.IN2
+d[2] => Equal16.IN3
+d[2] => Equal17.IN3
+d[2] => Equal18.IN4
+d[2] => Equal19.IN1
+d[2] => Equal20.IN1
+d[2] => Equal21.IN1
+d[2] => Equal22.IN1
+d[2] => Equal23.IN2
+d[2] => Equal24.IN3
+d[2] => Equal25.IN3
+d[2] => Equal26.IN4
+d[2] => Equal27.IN2
+d[2] => Equal28.IN2
+d[2] => Equal29.IN2
+d[2] => Equal30.IN2
+d[3] => Equal0.IN2
+d[3] => Equal1.IN2
+d[3] => Equal2.IN3
+d[3] => Equal3.IN2
+d[3] => Equal4.IN3
+d[3] => Equal5.IN3
+d[3] => Equal6.IN4
+d[3] => Equal7.IN0
+d[3] => Equal8.IN0
+d[3] => Equal9.IN0
+d[3] => Equal10.IN0
+d[3] => Equal11.IN0
+d[3] => Equal12.IN0
+d[3] => Equal13.IN0
+d[3] => Equal14.IN0
+d[3] => Equal15.IN1
+d[3] => Equal16.IN2
+d[3] => Equal17.IN2
+d[3] => Equal18.IN3
+d[3] => Equal19.IN2
+d[3] => Equal20.IN3
+d[3] => Equal21.IN3
+d[3] => Equal22.IN4
+d[3] => Equal23.IN1
+d[3] => Equal24.IN1
+d[3] => Equal25.IN1
+d[3] => Equal26.IN1
+d[3] => Equal27.IN1
+d[3] => Equal28.IN1
+d[3] => Equal29.IN1
+d[3] => Equal30.IN1
+d[4] => Equal0.IN1
+d[4] => Equal1.IN1
+d[4] => Equal2.IN2
+d[4] => Equal3.IN1
+d[4] => Equal4.IN2
+d[4] => Equal5.IN2
+d[4] => Equal6.IN3
+d[4] => Equal7.IN1
+d[4] => Equal8.IN2
+d[4] => Equal9.IN2
+d[4] => Equal10.IN3
+d[4] => Equal11.IN2
+d[4] => Equal12.IN3
+d[4] => Equal13.IN3
+d[4] => Equal14.IN4
+d[4] => Equal15.IN0
+d[4] => Equal16.IN0
+d[4] => Equal17.IN0
+d[4] => Equal18.IN0
+d[4] => Equal19.IN0
+d[4] => Equal20.IN0
+d[4] => Equal21.IN0
+d[4] => Equal22.IN0
+d[4] => Equal23.IN0
+d[4] => Equal24.IN0
+d[4] => Equal25.IN0
+d[4] => Equal26.IN0
+d[4] => Equal27.IN0
+d[4] => Equal28.IN0
+d[4] => Equal29.IN0
+d[4] => Equal30.IN0
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+dOut[0] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[1] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[2] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[3] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[4] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[5] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[6] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[7] <= <VCC>
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:in_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:in_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:in_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:in_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:in_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:in_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:out_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:out_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:out_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:out_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:out_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:3:out_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|dec2hex:\circuit_gen:3:hex_digit
+d[0] => Equal0.IN0
+d[0] => Equal1.IN4
+d[0] => Equal2.IN1
+d[0] => Equal3.IN4
+d[0] => Equal4.IN1
+d[0] => Equal5.IN4
+d[0] => Equal6.IN2
+d[0] => Equal7.IN4
+d[0] => Equal8.IN1
+d[0] => Equal9.IN4
+d[0] => Equal10.IN2
+d[0] => Equal11.IN4
+d[0] => Equal12.IN2
+d[0] => Equal13.IN4
+d[0] => Equal14.IN3
+d[0] => Equal15.IN4
+d[0] => Equal16.IN1
+d[0] => Equal17.IN4
+d[0] => Equal18.IN2
+d[0] => Equal19.IN4
+d[0] => Equal20.IN2
+d[0] => Equal21.IN4
+d[0] => Equal22.IN3
+d[0] => Equal23.IN4
+d[0] => Equal24.IN2
+d[0] => Equal25.IN4
+d[0] => Equal26.IN3
+d[0] => Equal27.IN4
+d[0] => Equal28.IN3
+d[0] => Equal29.IN4
+d[0] => Equal30.IN4
+d[1] => Equal0.IN4
+d[1] => Equal1.IN0
+d[1] => Equal2.IN0
+d[1] => Equal3.IN3
+d[1] => Equal4.IN4
+d[1] => Equal5.IN1
+d[1] => Equal6.IN1
+d[1] => Equal7.IN3
+d[1] => Equal8.IN4
+d[1] => Equal9.IN1
+d[1] => Equal10.IN1
+d[1] => Equal11.IN3
+d[1] => Equal12.IN4
+d[1] => Equal13.IN2
+d[1] => Equal14.IN2
+d[1] => Equal15.IN3
+d[1] => Equal16.IN4
+d[1] => Equal17.IN1
+d[1] => Equal18.IN1
+d[1] => Equal19.IN3
+d[1] => Equal20.IN4
+d[1] => Equal21.IN2
+d[1] => Equal22.IN2
+d[1] => Equal23.IN3
+d[1] => Equal24.IN4
+d[1] => Equal25.IN2
+d[1] => Equal26.IN2
+d[1] => Equal27.IN3
+d[1] => Equal28.IN4
+d[1] => Equal29.IN3
+d[1] => Equal30.IN3
+d[2] => Equal0.IN3
+d[2] => Equal1.IN3
+d[2] => Equal2.IN4
+d[2] => Equal3.IN0
+d[2] => Equal4.IN0
+d[2] => Equal5.IN0
+d[2] => Equal6.IN0
+d[2] => Equal7.IN2
+d[2] => Equal8.IN3
+d[2] => Equal9.IN3
+d[2] => Equal10.IN4
+d[2] => Equal11.IN1
+d[2] => Equal12.IN1
+d[2] => Equal13.IN1
+d[2] => Equal14.IN1
+d[2] => Equal15.IN2
+d[2] => Equal16.IN3
+d[2] => Equal17.IN3
+d[2] => Equal18.IN4
+d[2] => Equal19.IN1
+d[2] => Equal20.IN1
+d[2] => Equal21.IN1
+d[2] => Equal22.IN1
+d[2] => Equal23.IN2
+d[2] => Equal24.IN3
+d[2] => Equal25.IN3
+d[2] => Equal26.IN4
+d[2] => Equal27.IN2
+d[2] => Equal28.IN2
+d[2] => Equal29.IN2
+d[2] => Equal30.IN2
+d[3] => Equal0.IN2
+d[3] => Equal1.IN2
+d[3] => Equal2.IN3
+d[3] => Equal3.IN2
+d[3] => Equal4.IN3
+d[3] => Equal5.IN3
+d[3] => Equal6.IN4
+d[3] => Equal7.IN0
+d[3] => Equal8.IN0
+d[3] => Equal9.IN0
+d[3] => Equal10.IN0
+d[3] => Equal11.IN0
+d[3] => Equal12.IN0
+d[3] => Equal13.IN0
+d[3] => Equal14.IN0
+d[3] => Equal15.IN1
+d[3] => Equal16.IN2
+d[3] => Equal17.IN2
+d[3] => Equal18.IN3
+d[3] => Equal19.IN2
+d[3] => Equal20.IN3
+d[3] => Equal21.IN3
+d[3] => Equal22.IN4
+d[3] => Equal23.IN1
+d[3] => Equal24.IN1
+d[3] => Equal25.IN1
+d[3] => Equal26.IN1
+d[3] => Equal27.IN1
+d[3] => Equal28.IN1
+d[3] => Equal29.IN1
+d[3] => Equal30.IN1
+d[4] => Equal0.IN1
+d[4] => Equal1.IN1
+d[4] => Equal2.IN2
+d[4] => Equal3.IN1
+d[4] => Equal4.IN2
+d[4] => Equal5.IN2
+d[4] => Equal6.IN3
+d[4] => Equal7.IN1
+d[4] => Equal8.IN2
+d[4] => Equal9.IN2
+d[4] => Equal10.IN3
+d[4] => Equal11.IN2
+d[4] => Equal12.IN3
+d[4] => Equal13.IN3
+d[4] => Equal14.IN4
+d[4] => Equal15.IN0
+d[4] => Equal16.IN0
+d[4] => Equal17.IN0
+d[4] => Equal18.IN0
+d[4] => Equal19.IN0
+d[4] => Equal20.IN0
+d[4] => Equal21.IN0
+d[4] => Equal22.IN0
+d[4] => Equal23.IN0
+d[4] => Equal24.IN0
+d[4] => Equal25.IN0
+d[4] => Equal26.IN0
+d[4] => Equal27.IN0
+d[4] => Equal28.IN0
+d[4] => Equal29.IN0
+d[4] => Equal30.IN0
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+dOut[0] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[1] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[2] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[3] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[4] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[5] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[6] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[7] <= <VCC>
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:in_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:in_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:in_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:in_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:in_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:in_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:out_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:out_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:out_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:out_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:out_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:4:out_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|dec2hex:\circuit_gen:4:hex_digit
+d[0] => Equal0.IN0
+d[0] => Equal1.IN4
+d[0] => Equal2.IN1
+d[0] => Equal3.IN4
+d[0] => Equal4.IN1
+d[0] => Equal5.IN4
+d[0] => Equal6.IN2
+d[0] => Equal7.IN4
+d[0] => Equal8.IN1
+d[0] => Equal9.IN4
+d[0] => Equal10.IN2
+d[0] => Equal11.IN4
+d[0] => Equal12.IN2
+d[0] => Equal13.IN4
+d[0] => Equal14.IN3
+d[0] => Equal15.IN4
+d[0] => Equal16.IN1
+d[0] => Equal17.IN4
+d[0] => Equal18.IN2
+d[0] => Equal19.IN4
+d[0] => Equal20.IN2
+d[0] => Equal21.IN4
+d[0] => Equal22.IN3
+d[0] => Equal23.IN4
+d[0] => Equal24.IN2
+d[0] => Equal25.IN4
+d[0] => Equal26.IN3
+d[0] => Equal27.IN4
+d[0] => Equal28.IN3
+d[0] => Equal29.IN4
+d[0] => Equal30.IN4
+d[1] => Equal0.IN4
+d[1] => Equal1.IN0
+d[1] => Equal2.IN0
+d[1] => Equal3.IN3
+d[1] => Equal4.IN4
+d[1] => Equal5.IN1
+d[1] => Equal6.IN1
+d[1] => Equal7.IN3
+d[1] => Equal8.IN4
+d[1] => Equal9.IN1
+d[1] => Equal10.IN1
+d[1] => Equal11.IN3
+d[1] => Equal12.IN4
+d[1] => Equal13.IN2
+d[1] => Equal14.IN2
+d[1] => Equal15.IN3
+d[1] => Equal16.IN4
+d[1] => Equal17.IN1
+d[1] => Equal18.IN1
+d[1] => Equal19.IN3
+d[1] => Equal20.IN4
+d[1] => Equal21.IN2
+d[1] => Equal22.IN2
+d[1] => Equal23.IN3
+d[1] => Equal24.IN4
+d[1] => Equal25.IN2
+d[1] => Equal26.IN2
+d[1] => Equal27.IN3
+d[1] => Equal28.IN4
+d[1] => Equal29.IN3
+d[1] => Equal30.IN3
+d[2] => Equal0.IN3
+d[2] => Equal1.IN3
+d[2] => Equal2.IN4
+d[2] => Equal3.IN0
+d[2] => Equal4.IN0
+d[2] => Equal5.IN0
+d[2] => Equal6.IN0
+d[2] => Equal7.IN2
+d[2] => Equal8.IN3
+d[2] => Equal9.IN3
+d[2] => Equal10.IN4
+d[2] => Equal11.IN1
+d[2] => Equal12.IN1
+d[2] => Equal13.IN1
+d[2] => Equal14.IN1
+d[2] => Equal15.IN2
+d[2] => Equal16.IN3
+d[2] => Equal17.IN3
+d[2] => Equal18.IN4
+d[2] => Equal19.IN1
+d[2] => Equal20.IN1
+d[2] => Equal21.IN1
+d[2] => Equal22.IN1
+d[2] => Equal23.IN2
+d[2] => Equal24.IN3
+d[2] => Equal25.IN3
+d[2] => Equal26.IN4
+d[2] => Equal27.IN2
+d[2] => Equal28.IN2
+d[2] => Equal29.IN2
+d[2] => Equal30.IN2
+d[3] => Equal0.IN2
+d[3] => Equal1.IN2
+d[3] => Equal2.IN3
+d[3] => Equal3.IN2
+d[3] => Equal4.IN3
+d[3] => Equal5.IN3
+d[3] => Equal6.IN4
+d[3] => Equal7.IN0
+d[3] => Equal8.IN0
+d[3] => Equal9.IN0
+d[3] => Equal10.IN0
+d[3] => Equal11.IN0
+d[3] => Equal12.IN0
+d[3] => Equal13.IN0
+d[3] => Equal14.IN0
+d[3] => Equal15.IN1
+d[3] => Equal16.IN2
+d[3] => Equal17.IN2
+d[3] => Equal18.IN3
+d[3] => Equal19.IN2
+d[3] => Equal20.IN3
+d[3] => Equal21.IN3
+d[3] => Equal22.IN4
+d[3] => Equal23.IN1
+d[3] => Equal24.IN1
+d[3] => Equal25.IN1
+d[3] => Equal26.IN1
+d[3] => Equal27.IN1
+d[3] => Equal28.IN1
+d[3] => Equal29.IN1
+d[3] => Equal30.IN1
+d[4] => Equal0.IN1
+d[4] => Equal1.IN1
+d[4] => Equal2.IN2
+d[4] => Equal3.IN1
+d[4] => Equal4.IN2
+d[4] => Equal5.IN2
+d[4] => Equal6.IN3
+d[4] => Equal7.IN1
+d[4] => Equal8.IN2
+d[4] => Equal9.IN2
+d[4] => Equal10.IN3
+d[4] => Equal11.IN2
+d[4] => Equal12.IN3
+d[4] => Equal13.IN3
+d[4] => Equal14.IN4
+d[4] => Equal15.IN0
+d[4] => Equal16.IN0
+d[4] => Equal17.IN0
+d[4] => Equal18.IN0
+d[4] => Equal19.IN0
+d[4] => Equal20.IN0
+d[4] => Equal21.IN0
+d[4] => Equal22.IN0
+d[4] => Equal23.IN0
+d[4] => Equal24.IN0
+d[4] => Equal25.IN0
+d[4] => Equal26.IN0
+d[4] => Equal27.IN0
+d[4] => Equal28.IN0
+d[4] => Equal29.IN0
+d[4] => Equal30.IN0
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+dOut[0] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[1] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[2] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[3] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[4] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[5] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[6] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[7] <= <VCC>
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:in_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:in_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:in_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:in_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:in_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:in_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:out_reg
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+CLK => FFD:U4.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+RESET => FFD:U4.RESET
+SET => FFD:U0.SET
+SET => FFD:U1.SET
+SET => FFD:U2.SET
+SET => FFD:U3.SET
+SET => FFD:U4.SET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+D[4] => FFD:U4.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+EN => FFD:U4.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+Q[4] <= FFD:U4.Q
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:out_reg|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:out_reg|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:out_reg|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:out_reg|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|reg_5bit:\circuit_gen:5:out_reg|FFD:U4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|dec2hex:\circuit_gen:5:hex_digit
+d[0] => Equal0.IN0
+d[0] => Equal1.IN4
+d[0] => Equal2.IN1
+d[0] => Equal3.IN4
+d[0] => Equal4.IN1
+d[0] => Equal5.IN4
+d[0] => Equal6.IN2
+d[0] => Equal7.IN4
+d[0] => Equal8.IN1
+d[0] => Equal9.IN4
+d[0] => Equal10.IN2
+d[0] => Equal11.IN4
+d[0] => Equal12.IN2
+d[0] => Equal13.IN4
+d[0] => Equal14.IN3
+d[0] => Equal15.IN4
+d[0] => Equal16.IN1
+d[0] => Equal17.IN4
+d[0] => Equal18.IN2
+d[0] => Equal19.IN4
+d[0] => Equal20.IN2
+d[0] => Equal21.IN4
+d[0] => Equal22.IN3
+d[0] => Equal23.IN4
+d[0] => Equal24.IN2
+d[0] => Equal25.IN4
+d[0] => Equal26.IN3
+d[0] => Equal27.IN4
+d[0] => Equal28.IN3
+d[0] => Equal29.IN4
+d[0] => Equal30.IN4
+d[1] => Equal0.IN4
+d[1] => Equal1.IN0
+d[1] => Equal2.IN0
+d[1] => Equal3.IN3
+d[1] => Equal4.IN4
+d[1] => Equal5.IN1
+d[1] => Equal6.IN1
+d[1] => Equal7.IN3
+d[1] => Equal8.IN4
+d[1] => Equal9.IN1
+d[1] => Equal10.IN1
+d[1] => Equal11.IN3
+d[1] => Equal12.IN4
+d[1] => Equal13.IN2
+d[1] => Equal14.IN2
+d[1] => Equal15.IN3
+d[1] => Equal16.IN4
+d[1] => Equal17.IN1
+d[1] => Equal18.IN1
+d[1] => Equal19.IN3
+d[1] => Equal20.IN4
+d[1] => Equal21.IN2
+d[1] => Equal22.IN2
+d[1] => Equal23.IN3
+d[1] => Equal24.IN4
+d[1] => Equal25.IN2
+d[1] => Equal26.IN2
+d[1] => Equal27.IN3
+d[1] => Equal28.IN4
+d[1] => Equal29.IN3
+d[1] => Equal30.IN3
+d[2] => Equal0.IN3
+d[2] => Equal1.IN3
+d[2] => Equal2.IN4
+d[2] => Equal3.IN0
+d[2] => Equal4.IN0
+d[2] => Equal5.IN0
+d[2] => Equal6.IN0
+d[2] => Equal7.IN2
+d[2] => Equal8.IN3
+d[2] => Equal9.IN3
+d[2] => Equal10.IN4
+d[2] => Equal11.IN1
+d[2] => Equal12.IN1
+d[2] => Equal13.IN1
+d[2] => Equal14.IN1
+d[2] => Equal15.IN2
+d[2] => Equal16.IN3
+d[2] => Equal17.IN3
+d[2] => Equal18.IN4
+d[2] => Equal19.IN1
+d[2] => Equal20.IN1
+d[2] => Equal21.IN1
+d[2] => Equal22.IN1
+d[2] => Equal23.IN2
+d[2] => Equal24.IN3
+d[2] => Equal25.IN3
+d[2] => Equal26.IN4
+d[2] => Equal27.IN2
+d[2] => Equal28.IN2
+d[2] => Equal29.IN2
+d[2] => Equal30.IN2
+d[3] => Equal0.IN2
+d[3] => Equal1.IN2
+d[3] => Equal2.IN3
+d[3] => Equal3.IN2
+d[3] => Equal4.IN3
+d[3] => Equal5.IN3
+d[3] => Equal6.IN4
+d[3] => Equal7.IN0
+d[3] => Equal8.IN0
+d[3] => Equal9.IN0
+d[3] => Equal10.IN0
+d[3] => Equal11.IN0
+d[3] => Equal12.IN0
+d[3] => Equal13.IN0
+d[3] => Equal14.IN0
+d[3] => Equal15.IN1
+d[3] => Equal16.IN2
+d[3] => Equal17.IN2
+d[3] => Equal18.IN3
+d[3] => Equal19.IN2
+d[3] => Equal20.IN3
+d[3] => Equal21.IN3
+d[3] => Equal22.IN4
+d[3] => Equal23.IN1
+d[3] => Equal24.IN1
+d[3] => Equal25.IN1
+d[3] => Equal26.IN1
+d[3] => Equal27.IN1
+d[3] => Equal28.IN1
+d[3] => Equal29.IN1
+d[3] => Equal30.IN1
+d[4] => Equal0.IN1
+d[4] => Equal1.IN1
+d[4] => Equal2.IN2
+d[4] => Equal3.IN1
+d[4] => Equal4.IN2
+d[4] => Equal5.IN2
+d[4] => Equal6.IN3
+d[4] => Equal7.IN1
+d[4] => Equal8.IN2
+d[4] => Equal9.IN2
+d[4] => Equal10.IN3
+d[4] => Equal11.IN2
+d[4] => Equal12.IN3
+d[4] => Equal13.IN3
+d[4] => Equal14.IN4
+d[4] => Equal15.IN0
+d[4] => Equal16.IN0
+d[4] => Equal17.IN0
+d[4] => Equal18.IN0
+d[4] => Equal19.IN0
+d[4] => Equal20.IN0
+d[4] => Equal21.IN0
+d[4] => Equal22.IN0
+d[4] => Equal23.IN0
+d[4] => Equal24.IN0
+d[4] => Equal25.IN0
+d[4] => Equal26.IN0
+d[4] => Equal27.IN0
+d[4] => Equal28.IN0
+d[4] => Equal29.IN0
+d[4] => Equal30.IN0
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+clear => dOut.OUTPUTSELECT
+dOut[0] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[1] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[2] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[3] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[4] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[5] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[6] <= dOut.DB_MAX_OUTPUT_PORT_TYPE
+dOut[7] <= <VCC>
+
+
+|RouletteGame|rouletteDisplay:Unit_Roulette_Display|FFD:clear_reg
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC
+reset => Serial_Receiver:U_Serial_Receiver.reset
+reset => LCD_Dispatcher:U_LCD_Dispatcher.reset
+Mclk => Serial_Receiver:U_Serial_Receiver.clk
+Mclk => clkDIV:Unit_clock_div.clk_in
+SS => Serial_Receiver:U_Serial_Receiver.SS
+SCLK => Serial_Receiver:U_Serial_Receiver.SCLK
+SDX => Serial_Receiver:U_Serial_Receiver.SDX
+E <= LCD_Dispatcher:U_LCD_Dispatcher.Wrl
+Dout[0] <= LCD_Dispatcher:U_LCD_Dispatcher.Dout[0]
+Dout[1] <= LCD_Dispatcher:U_LCD_Dispatcher.Dout[1]
+Dout[2] <= LCD_Dispatcher:U_LCD_Dispatcher.Dout[2]
+Dout[3] <= LCD_Dispatcher:U_LCD_Dispatcher.Dout[3]
+Dout[4] <= LCD_Dispatcher:U_LCD_Dispatcher.Dout[4]
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver
+reset => Shift_Reg_Nary:U_Shift_Register_Nary.reset
+reset => Serial_Control:U_Serial_Control.reset
+clk => Serial_Control:U_Serial_Control.clk
+SS => Serial_Control:U_Serial_Control.enRx
+SCLK => Shift_Reg_Nary:U_Shift_Register_Nary.clk
+SCLK => COUNTER:U_Counter.Clock
+SCLK => Parity_Check:U_PARITY_CHECK.serialClock
+SDX => Shift_Reg_Nary:U_Shift_Register_Nary.Data
+SDX => Parity_Check:U_PARITY_CHECK.serialData
+accept => Serial_Control:U_Serial_Control.accept
+DXval <= Serial_Control:U_Serial_Control.DXval
+Data[0] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[0]
+Data[1] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[1]
+Data[2] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[2]
+Data[3] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[3]
+Data[4] <= Shift_Reg_Nary:U_Shift_Register_Nary.D[4]
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary
+Data => FFD:circuit_gen:4:FFD_inst.D
+clk => FFD:circuit_gen:0:FFD_inst.CLK
+clk => FFD:circuit_gen:1:FFD_inst.CLK
+clk => FFD:circuit_gen:2:FFD_inst.CLK
+clk => FFD:circuit_gen:3:FFD_inst.CLK
+clk => FFD:circuit_gen:4:FFD_inst.CLK
+E => FFD:circuit_gen:0:FFD_inst.EN
+E => FFD:circuit_gen:1:FFD_inst.EN
+E => FFD:circuit_gen:2:FFD_inst.EN
+E => FFD:circuit_gen:3:FFD_inst.EN
+E => FFD:circuit_gen:4:FFD_inst.EN
+reset => FFD:circuit_gen:0:FFD_inst.RESET
+reset => FFD:circuit_gen:1:FFD_inst.RESET
+reset => FFD:circuit_gen:2:FFD_inst.RESET
+reset => FFD:circuit_gen:3:FFD_inst.RESET
+reset => FFD:circuit_gen:4:FFD_inst.RESET
+Sout <= FFD:circuit_gen:4:FFD_inst.Q
+D[0] <= FFD:circuit_gen:0:FFD_inst.Q
+D[1] <= FFD:circuit_gen:1:FFD_inst.Q
+D[2] <= FFD:circuit_gen:2:FFD_inst.Q
+D[3] <= FFD:circuit_gen:3:FFD_inst.Q
+D[4] <= FFD:circuit_gen:4:FFD_inst.Q
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:0:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:1:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:2:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:3:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Shift_Reg_Nary:U_Shift_Register_Nary|FFD:\circuit_gen:4:FFD_inst
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|EQUALS:U_XNOR5
+X[0] => equalResult[0].IN0
+X[1] => equalResult[1].IN0
+X[2] => equalResult[2].IN0
+X[3] => equalResult[3].IN0
+match[0] => equalResult[0].IN1
+match[1] => equalResult[1].IN1
+match[2] => equalResult[2].IN1
+match[3] => equalResult[3].IN1
+Q <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|EQUALS:U_XNOR6
+X[0] => equalResult[0].IN0
+X[1] => equalResult[1].IN0
+X[2] => equalResult[2].IN0
+X[3] => equalResult[3].IN0
+match[0] => equalResult[0].IN1
+match[1] => equalResult[1].IN1
+match[2] => equalResult[2].IN1
+match[3] => equalResult[3].IN1
+Q <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter
+Reset => reg:reg_4.RESET
+Clock => reg:reg_4.CLK
+Enabled => reg:reg_4.EN
+S[0] <= reg:reg_4.Q[0]
+S[1] <= reg:reg_4.Q[1]
+S[2] <= reg:reg_4.Q[2]
+S[3] <= reg:reg_4.Q[3]
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|reg:reg_4
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+RESET => FFD:U0.RESET
+RESET => FFD:U1.RESET
+RESET => FFD:U2.RESET
+RESET => FFD:U3.RESET
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+EN => FFD:U0.EN
+EN => FFD:U1.EN
+EN => FFD:U2.EN
+EN => FFD:U3.EN
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|reg:reg_4|FFD:U3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4
+A[0] => FULLADDER:FA0.A
+A[1] => FULLADDER:FA1.A
+A[2] => FULLADDER:FA2.A
+A[3] => FULLADDER:FA3.A
+B[0] => FULLADDER:FA0.B
+B[1] => FULLADDER:FA1.B
+B[2] => FULLADDER:FA2.B
+B[3] => FULLADDER:FA3.B
+C0 => FULLADDER:FA0.Cin
+S[0] <= FULLADDER:FA0.R
+S[1] <= FULLADDER:FA1.R
+S[2] <= FULLADDER:FA2.R
+S[3] <= FULLADDER:FA3.R
+C4 <= FULLADDER:FA3.Cout
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA0
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA1
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA2
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Counter:U_Counter|ADDER:adder_4|FULLADDER:FA3
+A => R.IN0
+A => Cout.IN0
+B => R.IN1
+B => Cout.IN1
+Cin => R.IN1
+Cin => Cout.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Serial_Control:U_Serial_Control
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+enRx => NextState.OUTPUTSELECT
+enRx => NextState.OUTPUTSELECT
+enRx => GenerateNextState.IN0
+enRx => GenerateNextState.IN0
+enRx => Selector0.IN4
+enRx => Selector1.IN1
+enRx => GenerateNextState.IN0
+accept => NextState.STATE_ACCEPT.DATAB
+accept => Selector0.IN2
+accept => Selector3.IN2
+pFlag => GenerateNextState.IN1
+pFlag => GenerateNextState.IN1
+dFlag => GenerateNextState.IN1
+RXerror => GenerateNextState.IN1
+wr <= wr.DB_MAX_OUTPUT_PORT_TYPE
+init <= init.DB_MAX_OUTPUT_PORT_TYPE
+DXval <= DXval.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Parity_Check:U_PARITY_CHECK
+serialData => resultXor.IN1
+serialClock => FFD:flipFlop.CLK
+init => FFD:flipFlop.RESET
+error <= FFD:flipFlop.Q
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|Serial_Receiver:U_Serial_Receiver|Parity_Check:U_PARITY_CHECK|FFD:flipFlop
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|LCD_Dispatcher:U_LCD_Dispatcher
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+Dval => NextState.STATE_VALID.DATAB
+Dval => Selector1.IN3
+Dval => Selector0.IN1
+Din[0] => Dout[0].DATAIN
+Din[1] => Dout[1].DATAIN
+Din[2] => Dout[2].DATAIN
+Din[3] => Dout[3].DATAIN
+Din[4] => Dout[4].DATAIN
+Wrl <= Wrl.DB_MAX_OUTPUT_PORT_TYPE
+Dout[0] <= Din[0].DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Din[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Din[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Din[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Din[4].DB_MAX_OUTPUT_PORT_TYPE
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RouletteGame|SLCDC:Unit_SLCDC|CLKDIV:Unit_clock_div
+clk_in => tmp.CLK
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => count[2].CLK
+clk_in => count[3].CLK
+clk_in => count[4].CLK
+clk_in => count[5].CLK
+clk_in => count[6].CLK
+clk_in => count[7].CLK
+clk_in => count[8].CLK
+clk_in => count[9].CLK
+clk_in => count[10].CLK
+clk_in => count[11].CLK
+clk_in => count[12].CLK
+clk_in => count[13].CLK
+clk_in => count[14].CLK
+clk_in => count[15].CLK
+clk_in => count[16].CLK
+clk_in => count[17].CLK
+clk_in => count[18].CLK
+clk_in => count[19].CLK
+clk_in => count[20].CLK
+clk_in => count[21].CLK
+clk_in => count[22].CLK
+clk_in => count[23].CLK
+clk_in => count[24].CLK
+clk_in => count[25].CLK
+clk_in => count[26].CLK
+clk_in => count[27].CLK
+clk_in => count[28].CLK
+clk_in => count[29].CLK
+clk_in => count[30].CLK
+clk_in => count[31].CLK
+clk_out <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+

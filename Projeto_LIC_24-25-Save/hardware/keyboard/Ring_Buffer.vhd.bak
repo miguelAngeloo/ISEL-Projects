@@ -1,0 +1,46 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Ring_Buffer is
+port(
+		reset : in std_logic;
+		Mclk : in std_logic;
+		DAV : in std_logic;
+		CTS: in std_logic;
+		Data: in std_logic_vector(3 downto 0);
+		Wreg: out std_logic;
+		Q: out std_logic_vector(3 downto 0);
+		DAC : out std_logic
+);
+
+end Ring_Buffer;
+
+architecture Structural of Ring_Buffer is
+
+component Ring_Buffer_Control is
+port(
+		reset 	: in std_logic;
+		clk		: in std_logic;
+		DAV		: in std_logic;
+		CTS	   : in std_logic;
+		full		: in std_logic;
+		empty		: in std_logic;
+		Wr		   : out std_logic;
+		selPG		: out std_logic;
+		incPutC	: out std_logic;
+		incGetC	: out std_logic;
+		Wreg	   : out std_logic;
+		DAC	   : out std_logic
+);
+
+end component;
+
+
+
+
+begin
+
+
+
+end Structural;
+

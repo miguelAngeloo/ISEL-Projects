@@ -1,0 +1,244 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/simulation/modelsim
+Eadder
+Z1 w1703559535
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/ADDER.vhd
+Z5 FC:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/ADDER.vhd
+l0
+L4
+Vb5TIfIKmBoc7U6c[ZhDF;1
+!s100 Q[A7SEMooN?KG6JCL[DNP3
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1709639303
+!i10b 1
+Z8 !s108 1709639303.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/ADDER.vhd|
+Z10 !s107 C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/ADDER.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+DEx4 work 5 adder 0 22 b5TIfIKmBoc7U6c[ZhDF;1
+l29
+L14
+VkIciJU;IMMiocHbE5k4Jn3
+!s100 D5JY:`VU5ok;aPmNFWW7e2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecounter
+Z13 w1709638219
+R2
+R3
+R0
+Z14 8C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/Counter.vhd
+Z15 FC:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/Counter.vhd
+l0
+L4
+VFME4>HgHnHTV?zPmIoVZE3
+!s100 izGl3B=mlc4c===GaaoPN0
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/Counter.vhd|
+Z17 !s107 C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/Counter.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 7 counter 0 22 FME4>HgHnHTV?zPmIoVZE3
+l37
+L13
+V6F@Z4XDoJAgjkKeZnieN72
+!s100 BTJ6Bzk@2`T;CA0LnSPzC0
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Ecounter_tb
+Z18 w1709639287
+R2
+R3
+R0
+Z19 8C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_tb.vhd
+Z20 FC:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_tb.vhd
+l0
+L4
+VD8SHPHITSb3XUQGNYm1jX0
+!s100 YKeY_I_d@N2Kj2LJcQ68z3
+R6
+32
+Z21 !s110 1709639320
+!i10b 1
+Z22 !s108 1709639320.000000
+Z23 !s90 -reportprogress|300|-work|work|C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_tb.vhd|
+Z24 !s107 C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_tb.vhd|
+!i113 1
+Z25 o-work work
+R12
+Abehavioral
+R2
+R3
+DEx4 work 10 counter_tb 0 22 D8SHPHITSb3XUQGNYm1jX0
+l24
+L7
+VOLNWa=bCzBQzUQSgM_PTR2
+!s100 XR^Io_6126E0ThX1ANkT@1
+R6
+32
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R25
+R12
+Effd
+Z26 w1703563535
+R2
+R3
+R0
+Z27 8C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FFD.vhd
+Z28 FC:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FFD.vhd
+l0
+L4
+V3O0;4bb9o=5EOd@_Uo0bf1
+!s100 MX9<IGJ]E=[8m64DZJ_Bg2
+R6
+31
+Z29 !s110 1709639302
+!i10b 1
+Z30 !s108 1709639302.000000
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FFD.vhd|
+Z32 !s107 C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FFD.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 3 ffd 0 22 3O0;4bb9o=5EOd@_Uo0bf1
+l16
+L15
+VCh]SX@GHj2FnUzOhz2WYE1
+!s100 kJ?0GDY=3=;Vf7_2?F?m>0
+R6
+31
+R29
+!i10b 1
+R30
+R31
+R32
+!i113 1
+R11
+R12
+Efulladder
+Z33 w1703601127
+R2
+R3
+R0
+Z34 8C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FULLADDER.vhd
+Z35 FC:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FULLADDER.vhd
+l0
+L4
+VcUJd`:FdPAT=f^D_?[C[D2
+!s100 GAjCWoWhC74efcZJV_DHP1
+R6
+31
+R29
+!i10b 1
+R30
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FULLADDER.vhd|
+Z37 !s107 C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/FULLADDER.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 9 fulladder 0 22 cUJd`:FdPAT=f^D_?[C[D2
+l15
+L14
+Vh0cio;]OH>_9bll`CUD050
+!s100 BHEdWdjmj`;1=TLzfkC540
+R6
+31
+R29
+!i10b 1
+R30
+R36
+R37
+!i113 1
+R11
+R12
+Ereg
+Z38 w1703562100
+R2
+R3
+R0
+Z39 8C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/REGISTER.vhd
+Z40 FC:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/REGISTER.vhd
+l0
+L4
+V;mBWiBEP6znB9M>3d0L;o0
+!s100 [JC_h;m7Q9:TEX@8V2jX?3
+R6
+31
+R29
+!i10b 1
+R30
+Z41 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/REGISTER.vhd|
+Z42 !s107 C:/ISEL/2_Semestre/LIC/Atividades/Projeto/Key_Scan/Counter/Counter_Test/REGISTER.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 3 reg 0 22 ;mBWiBEP6znB9M>3d0L;o0
+l25
+L14
+V8ScX9eokJlXb^40[<3=<;3
+!s100 DL]OU@H[H^DiG54kBChQl1
+R6
+31
+R29
+!i10b 1
+R30
+R41
+R42
+!i113 1
+R11
+R12

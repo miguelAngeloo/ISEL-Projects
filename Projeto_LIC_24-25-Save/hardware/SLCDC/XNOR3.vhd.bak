@@ -1,0 +1,18 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY XNOR3 IS
+PORT(	X : in std_logic_vector(2 downto 0);
+		Q : out std_logic
+		);
+END FFD;
+
+ARCHITECTURE logicFunction OF XNOR3 IS
+
+BEGIN
+
+
+Q <= '1' when X = '101' else '0';
+
+
+END LogicFunction;

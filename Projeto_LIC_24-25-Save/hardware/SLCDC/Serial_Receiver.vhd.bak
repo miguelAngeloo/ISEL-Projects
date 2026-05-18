@@ -1,0 +1,55 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Serial_Receiver is
+port(
+		reset : in std_logic;
+		clk : in std_logic;
+		SS : in std_logic;
+		SCLK: in std_logic;
+		SDX : in std_logic;
+		accept: in std_logic;
+		DXval: out std_logic;
+		Data: out std_logic_vector(4 downto 0)
+);
+
+end Serial_Receiver;
+
+architecture Structural of Serial_Receiver is
+
+component Shift_Reg is
+port (
+		Data : in std_logic;
+		clk : in std_logic;
+		E: in std_logic;
+		reset: in std_logic;
+		Sout: out std_logic;
+		D: out std_logic_vector(4 downto 0)
+);
+
+end component;
+
+component XNOR3 is
+PORT(	
+		X : in std_logic_vector(3 downto 0);
+		match : in std_logic_vector(3 downto 0);
+		Q : out std_logic
+);
+
+end component;
+
+
+component clkDIV is
+port(
+		clk_in: in std_logic;
+		clk_out: out std_logic
+);
+
+end component;
+
+
+begin
+
+
+
+end Structural;

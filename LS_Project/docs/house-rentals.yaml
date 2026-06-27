@@ -1,0 +1,1219 @@
+openapi: 3.0.3
+info:
+  title: House Rentals API
+  description: API para gestão de utilizadores, casas, localizações, reservas e autenticação do projeto de LS com interface SPA.
+  version: 2.0.0
+servers:
+  - url: http://localhost:8080
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: UUID
+
+  schemas:
+    RegisterInputModel:
+      type: object
+      required: [name, email, password]
+      properties:
+        name:
+          type: string
+          example: "user1"
+        email:
+          type: string
+          format: email
+          example: "user1@isel.pt"
+        password:
+          type: string
+          format: password
+          example: "password123"
+
+    LoginInputModel:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+          example: "user1@isel.pt"
+        password:
+          type: string
+          format: password
+          example: "password123"
+
+    RegisterOutputModel:
+      type: object
+      properties:
+        userId:
+          type: integer
+          example: 1
+        token:
+          type: string
+          format: uuid
+          example: "d72650ae-4998-4ec4-8fee-66d9984ee60e"
+
+    TokenOutputModel:
+      type: object
+      properties:
+        token:
+          type: string
+          format: uuid
+          example: "d72650ae-4998-4ec4-8fee-66d9984ee60e"
+        userId:
+          type: integer
+          example: 1
+
+    UserDetailsOutputModel:
+      type: object
+      properties:
+        userId:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "user1"
+        email:
+          type: string
+          example: "user1@isel.pt"
+
+    UpdateUserInputModel:
+      type: object
+      required: [ name ]
+      properties:
+        name:
+          type: string
+          example: "updated_user"
+
+    Location:
+      type: object
+      properties:
+        lid:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Lisboa"
+        type:
+          type: string
+          enum: [COUNTRY, REGION, DISTRICT, MUNICIPALITY, LOCALITY]
+          example: "DISTRICT"
+        parentId:
+          type: integer
+          nullable: true
+          example: 1
+
+    CreateLocationInput:
+      type: object
+      required: [name, type]
+      properties:
+        name:
+          type: string
+          example: "Lisboa"
+        type:
+          type: string
+          enum: [COUNTRY, REGION, DISTRICT, MUNICIPALITY, LOCALITY]
+          example: "DISTRICT"
+        parentId:
+          type: integer
+          nullable: true
+          example: 1
+
+    CreateLocationOutput:
+      type: object
+      properties:
+        lid:
+          type: integer
+          example: 1
+
+    GetChildLocationsOutput:
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+
+    LocationPath:
+      type: object
+      properties:
+        path:
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+
+    House:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        ownerId:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: "Casa de Campo"
+        locationId:
+          type: integer
+          example: 10
+        areaSqMt:
+          type: integer
+          example: 120
+        pricePerNight:
+          type: number
+          format: double
+          example: 75.5
+        description:
+          type: string
+          example: "Uma casa tranquila no Alentejo."
+
+    CreateHouseInput:
+      type: object
+      required: [title, location, areaSqMt, pricePerNight, description]
+      properties:
+        title:
+          type: string
+          example: "Casa de Campo"
+        location:
+          type: integer
+          example: 10
+        areaSqMt:
+          type: integer
+          example: 120
+        pricePerNight:
+          type: number
+          format: double
+          example: 75.5
+        description:
+          type: string
+          example: "Uma casa tranquila no Alentejo."
+
+    CreateHouseOutput:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+
+    GetAllHousesOutput:
+      type: object
+      properties:
+        houses:
+          type: array
+          items:
+            $ref: '#/components/schemas/House'
+
+    AvailableHouse:
+      type: object
+      properties:
+        house:
+          $ref: '#/components/schemas/House'
+        available:
+          type: boolean
+          example: true
+
+    GetAvailableHousesOutput:
+      type: object
+      properties:
+        houses:
+          type: array
+          items:
+            $ref: '#/components/schemas/AvailableHouse'
+
+    Booking:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        userId:
+          type: integer
+          example: 1
+        houseId:
+          type: integer
+          example: 1
+        startDate:
+          type: string
+          format: date
+          example: "2026-06-01"
+        endDate:
+          type: string
+          format: date
+          example: "2026-06-05"
+
+    CreateBookingInput:
+      type: object
+      required: [hid, startDate, endDate]
+      properties:
+        hid:
+          type: integer
+          example: 1
+        startDate:
+          type: string
+          format: date
+          example: "2026-06-01"
+        endDate:
+          type: string
+          format: date
+          example: "2026-06-05"
+
+    CreateBookingOutput:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+
+    GetBookingsOutput:
+      type: object
+      properties:
+        bookings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Booking'
+
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+          example: 400
+        description:
+          type: string
+          example: "Bad Request"
+        errorCause:
+          type: string
+          example: "Invalid email format"
+
+    PricePrediction:
+      type: object
+      properties:
+        predictedPricePerNight:
+          type: number
+          format: double
+          example: 125.50
+        predictedTotalPrice:
+          type: number
+          format: double
+          example: 627.50
+
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Authentication
+      summary: Regista um novo utilizador
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterInputModel'
+            examples:
+              registerExample:
+                value:
+                  name: "user1"
+                  email: "user1@isel.pt"
+                  password: "password123"
+      responses:
+        '201':
+          description: Utilizador criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterOutputModel'
+        '400':
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: Email já em uso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: Autentica um utilizador e devolve um token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginInputModel'
+            examples:
+              loginExample:
+                value:
+                  email: "user1@isel.pt"
+                  password: "password123"
+      responses:
+        '200':
+          description: Login com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenOutputModel'
+        '401':
+          description: Credenciais inválidas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/logout:
+    post:
+      tags:
+        - Authentication
+      summary: Invalida o token atual
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Logout realizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Logged out successfully"
+        '401':
+          description: Token inválido ou ausente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Obtém detalhes de um utilizador específico
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do utilizador a consultar
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Dados do utilizador
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetailsOutputModel'
+        '401':
+          description: Não autorizado (token inválido ou de outro utilizador)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Utilizador não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /users/{id}/bookings:
+    get:
+      tags:
+        - Users
+      summary: Obtém as reservas de um utilizador específico
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do utilizador
+          schema:
+            type: integer
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: Lista de reservas do utilizador
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBookingsOutput'
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Utilizador não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /users:
+    put:
+      tags:
+        - Users
+      summary: Atualiza os dados do utilizador autenticado
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserInputModel'
+            examples:
+              updateUserExample:
+                value:
+                  name: "updated_user"
+      responses:
+        '200':
+          description: Utilizador atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetailsOutputModel'
+        '400':
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      tags:
+        - Users
+      summary: Elimina o utilizador autenticado
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Utilizador eliminado com sucesso
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /locations:
+    get:
+      tags:
+        - Locations
+      summary: Obtém lista de localizações com paging
+      parameters:
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: Número de localizações a saltar
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Número máximo de localizações a devolver
+      responses:
+        '200':
+          description: Lista de localizações
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+        '400':
+          description: Parâmetros inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    post:
+      tags:
+        - Locations
+      summary: Cria uma nova localização
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLocationInput'
+            examples:
+              createLocationExample:
+                value:
+                  name: "Lisboa"
+                  type: "DISTRICT"
+                  parentId: 1
+      responses:
+        '201':
+          description: Localização criada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLocationOutput'
+        '400':
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /locations/{id}:
+    get:
+      tags:
+        - Locations
+      summary: Obtém detalhes de uma localização específica
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalhes da localização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+        '400':
+          description: ID inválido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Localização não encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /locations/{id}/children:
+    get:
+      tags:
+        - Locations
+      summary: Obtém os filhos diretos de uma localização
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de localizações filhas diretas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetChildLocationsOutput'
+        '400':
+          description: ID inválido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Localização não encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /locations/{id}/fullpath:
+    get:
+      tags:
+        - Locations
+      summary: Obtém o caminho hierárquico completo desde a raiz até à localização
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Caminho hierárquico completo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationPath'
+        '400':
+          description: ID inválido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Localização não encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /houses:
+    post:
+      tags:
+        - Houses
+      summary: Cria uma nova casa
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateHouseInput'
+            examples:
+              createHouseExample:
+                value:
+                  title: "Casa de Campo"
+                  location: 10
+                  areaSqMt: 120
+                  pricePerNight: 75.5
+                  description: "Uma casa tranquila no Alentejo."
+      responses:
+        '201':
+          description: Casa criada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateHouseOutput'
+              examples:
+                createHouseResponse:
+                  value:
+                    id: 1
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    get:
+      tags:
+        - Houses
+      summary: Obtém todas as casas com paging opcional por localização
+      parameters:
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: Número de casas a saltar
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Número máximo de casas a devolver
+        - name: locationId
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: ID da localização para filtrar casas (opcional)
+      responses:
+        '200':
+          description: Lista de casas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllHousesOutput'
+              examples:
+                getAllHousesResponse:
+                  value:
+                    houses:
+                      - id: 1
+                        title: "Casa de Campo"
+                        locationId: 10
+                        areaSqMt: 120
+                        pricePerNight: 75.5
+                        description: "Uma casa tranquila no Alentejo."
+
+  /houses/count:
+    get:
+      tags:
+        - Houses
+      summary: Obtém o número total de casas
+      responses:
+        '200':
+          description: Contagem total de casas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 42
+
+  /houses/search:
+    get:
+      tags:
+        - Houses
+      summary: Pesquisa casas com filtros específicos
+      parameters:
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+        - name: locationId
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de casas filtradas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllHousesOutput'
+
+  /houses/available:
+    get:
+      tags:
+        - Houses
+      summary: Obtém casas disponíveis num intervalo de datas
+      parameters:
+        - name: startDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: Número de casas a saltar
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Número máximo de casas a devolver
+      responses:
+        '200':
+          description: Lista de casas disponíveis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailableHousesOutput'
+              examples:
+                getAvailableHousesResponse:
+                  value:
+                    houses:
+                      - house:
+                          id: 1
+                          title: "Casa de Campo"
+                          locationId: 10
+                          areaSqMt: 120
+                          pricePerNight: 75.5
+                          description: "Uma casa tranquila no Alentejo."
+                        available: true
+        '400':
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /houses/{id}:
+    get:
+      tags:
+        - Houses
+      summary: Obtém detalhes de uma casa específica
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalhes da casa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/House'
+        '404':
+          description: Casa não encontrada
+
+  /houses/{id}/available-days:
+    get:
+      tags:
+        - Houses
+      summary: Obtém dias disponíveis de uma casa para um determinado mês e ano
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: year
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: Ano (ex. 2026)
+        - name: month
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: Mês (1-12)
+      responses:
+        '200':
+          description: Mapa de disponibilidade do mês especificado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  availableDays:
+                    type: array
+                    items:
+                      type: integer
+                    description: Array com os dias disponíveis do mês
+                    example: [1, 2, 3, 5, 6, 7, 10, 11]
+        '400':
+          description: Parâmetros inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Casa não encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+
+  /bookings:
+    post:
+      tags:
+        - Bookings
+      summary: Cria uma nova reserva
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBookingInput'
+            examples:
+              createBookingExample:
+                value:
+                  hid: 1
+                  startDate: "2026-06-01"
+                  endDate: "2026-06-05"
+      responses:
+        '201':
+          description: Reserva criada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateBookingOutput'
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    get:
+      tags:
+        - Bookings
+      summary: Obtém reservas filtradas por casa e/ou data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: hid
+          in: query
+          schema:
+            type: integer
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: Número de reservas a saltar
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Número máximo de reservas a devolver
+      responses:
+        '200':
+          description: Lista de reservas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBookingsOutput'
+              examples:
+                getBookingsResponse:
+                  value:
+                    bookings:
+                      - id: 1
+                        userId: 1
+                        houseId: 1
+                        startDate: "2026-06-01"
+                        endDate: "2026-06-05"
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /bookings/me:
+    get:
+      tags:
+        - Bookings
+      summary: Obtém as reservas do utilizador autenticado
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: Número de reservas a saltar
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Número máximo de reservas a devolver
+      responses:
+        '200':
+          description: Lista de reservas do utilizador
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBookingsOutput'
+        '401':
+          description: Não autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /bookings/{id}:
+    get:
+      tags:
+        - Bookings
+      summary: Obtém detalhes de uma reserva específica
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalhes da reserva
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '401':
+          description: Não autorizado
+        '404':
+          description: Reserva não encontrada
+
+    put:
+      tags:
+        - Bookings
+      summary: Atualiza uma reserva existente
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBookingInput'
+      responses:
+        '200':
+          description: Reserva atualizada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '400':
+          description: Dados inválidos
+        '401':
+          description: Não autorizado
+        '404':
+          description: Reserva não encontrada
+
+    delete:
+      tags:
+        - Bookings
+      summary: Elimina uma reserva existente
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Reserva eliminada com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Não autorizado
+        '404':
+          description: Reserva não encontrada
+
+  /predictions/price:
+    get:
+      tags:
+        - Predictions
+      summary: Obtém previsão de preço baseada em características
+      description: O modelo é treinado uma única vez no arranque do servidor com as casas existentes nessa altura e permanece inalterado durante a execução.
+      parameters:
+        - name: areaSqMt
+          in: query
+          required: true
+          schema:
+            type: number
+            format: double
+          description: Área da casa em metros quadrados
+        - name: lid
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID da localização
+        - name: nights
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: Número de noites
+      responses:
+        '200':
+          description: Previsão de preço calculada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PricePrediction'
+              examples:
+                pricePredictionResponse:
+                  value:
+                    predictedPricePerNight: 125.50
+                    predictedTotalPrice: 627.50
+        '400':
+          description: Parâmetros inválidos ou ausentes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'

@@ -1,0 +1,251 @@
+
+
+@host = http://localhost:8080
+
+### 6.1 Create two users (User 1)
+# @name createUser1
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "User One",
+  "email": "user1@example.com",
+  "password": "password123"
+}
+
+> {%
+    client.global.set("user1_token", response.body.token);
+    client.global.set("user1_id", response.body.id);
+%}
+
+### 6.1 Create two users (User 2)
+# @name createUser2
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "User Two",
+  "email": "user2@example.com",
+  "password": "password123"
+}
+
+> {%
+    client.global.set("user2_token", response.body.token);
+    client.global.set("user2_id", response.body.id);
+%}
+
+### 6.2 Attempt to create another user with the same email
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "UserThreeDuplicated",
+  "email": "user1@example.com",
+  "password": "password123"
+}
+
+### 6.3 Create four locations: Portugal -> Lisboa -> Oeiras -> Paço de Arcos
+
+# 1. Portugal
+# @name createLocPortugal
+POST {{host}}/locations
+Authorization: Bearer {{user1_token}}
+Content-Type: application/json
+
+{
+  "name": "Portugal",
+  "type": "COUNTRY"
+}
+
+> {%
+    client.global.set("loc_portugal", response.body.lid || response.body.id || response.body);
+%}
+
+### 2. Lisboa
+# @name createLocLisboa
+POST {{host}}/locations
+Authorization: Bearer {{user1_token}}
+Content-Type: application/json
+
+{
+  "name": "Lisboa",
+  "type": "DISTRICT",
+  "parentId": {{loc_portugal}}
+}
+
+> {%
+    client.global.set("loc_lisboa", response.body.lid || response.body.id || response.body);
+%}
+
+### 3. Oeiras
+# @name createLocOeiras
+POST {{host}}/locations
+Authorization: Bearer {{user1_token}}
+Content-Type: application/json
+
+{
+  "name": "Oeiras",
+  "type": "MUNICIPALITY",
+  "parentId": {{loc_lisboa}}
+}
+
+> {%
+    client.global.set("loc_oeiras", response.body.lid || response.body.id || response.body);
+%}
+
+### 4. Paço de Arcos
+# @name createLocPacoArcos
+POST {{host}}/locations
+Authorization: Bearer {{user1_token}}
+Content-Type: application/json
+
+{
+  "name": "Paço de Arcos",
+  "type": "LOCALITY",
+  "parentId": {{loc_oeiras}}
+}
+
+> {%
+    client.global.set("loc_paco_arcos", response.body.lid || response.body.id || response.body);
+%}
+
+### 6.4 List the child locations of Lisboa
+GET {{host}}/locations/{{loc_lisboa}}/children
+Accept: application/json
+
+### 6.5 Add three houses with location set to Paço de Arcos
+
+# House 1
+# @name createHouse1
+POST {{host}}/houses
+Authorization: Bearer {{user1_token}}
+Content-Type: application/json
+
+{
+  "title": "Riverside Villa",
+  "location": {{loc_paco_arcos}},
+  "areaSqMt": 150,
+  "pricePerNight": 120.0,
+  "description": "Beautiful riverside villa in Paço de Arcos."
+}
+
+> {%
+    client.global.set("house1_id", response.body.id || response.body);
+%}
+
+### House 2
+POST {{host}}/houses
+Authorization: Bearer {{user1_token}}
+Content-Type: application/json
+
+{
+  "title": "Ocean View Apartment",
+  "location": {{loc_paco_arcos}},
+  "areaSqMt": 80,
+  "pricePerNight": 75.0,
+  "description": "Cozy apartment with ocean view."
+}
+
+### House 3
+POST {{host}}/houses
+Authorization: Bearer {{user1_token}}
+Content-Type: application/json
+
+{
+  "title": "Historic Downtown Home",
+  "location": {{loc_paco_arcos}},
+  "areaSqMt": 200,
+  "pricePerNight": 250.0,
+  "description": "Large historic home."
+}
+
+### 6.6 List all houses
+GET {{host}}/houses?limit=100
+Accept: application/json
+
+### 6.7 Show the details of one house
+GET {{host}}/houses/{{house1_id}}
+Accept: application/json
+
+### 6.8 Create two bookings for the first house using the first user
+
+# Booking 1
+# @name createBooking1
+POST {{host}}/bookings
+Authorization: Bearer {{user2_token}}
+Content-Type: application/json
+
+{
+  "hid": {{house1_id}},
+  "startDate": "2026-05-01",
+  "endDate": "2026-05-10"
+}
+
+> {%
+    client.global.set("booking1_id", response.body.id || response.body);
+%}
+
+### Booking 2
+# @name createBooking2
+POST {{host}}/bookings
+Authorization: Bearer {{user2_token}}
+Content-Type: application/json
+
+{
+  "hid": {{house1_id}},
+  "startDate": "2026-06-01",
+  "endDate": "2026-06-15"
+}
+
+> {%
+    client.global.set("booking2_id", response.body.id || response.body);
+%}
+
+### 6.9 Attempt to create a booking with an invalid date format
+POST {{host}}/bookings
+Authorization: Bearer {{user2_token}}
+Content-Type: application/json
+
+{
+  "hid": {{house1_id}},
+  "startDate": "01-07-2026",
+  "endDate": "2026-07-10"
+}
+
+### 6.9 Attempt to create a booking that overlaps with an existing booking
+POST {{host}}/bookings
+Authorization: Bearer {{user2_token}}
+Content-Type: application/json
+
+{
+  "hid": {{house1_id}},
+  "startDate": "2026-05-05",
+  "endDate": "2026-05-20"
+}
+
+### 6.10 List all bookings for the first house
+GET {{host}}/bookings?hid={{house1_id}}
+Authorization: Bearer {{user2_token}}
+Accept: application/json
+
+### 6.11 Show the details of one booking
+GET {{host}}/bookings/{{booking1_id}}
+Authorization: Bearer {{user2_token}}
+Accept: application/json
+
+### 6.12 List all houses using pagination with page size of 2 (Page 1)
+GET {{host}}/houses?skip=0&limit=2
+Accept: application/json
+
+### 6.12 List all houses using pagination with page size of 2 (Page 2)
+GET {{host}}/houses?skip=2&limit=2
+Accept: application/json
+
+### 6.13 Remove a booking
+DELETE {{host}}/bookings/{{booking1_id}}
+Authorization: Bearer {{user2_token}}
+
+### 6.14 Attempt to show the details of the previously removed booking
+GET {{host}}/bookings/{{booking1_id}}
+Authorization: Bearer {{user2_token}}
+Accept: application/json

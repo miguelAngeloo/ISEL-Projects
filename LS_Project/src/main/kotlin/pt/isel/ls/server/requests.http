@@ -1,0 +1,119 @@
+@token = dabbd27c-cbf5-4881-ae6f-3dff1c3324bc
+
+### Auth - register user
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "name": "Alice",
+  "email": "alicee@example.com",
+  "password": "yayayya"
+}
+
+###
+### Auth - login
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "alicee@example.com",
+  "password": "yayayya"
+}
+
+###
+### User - get own profile 
+GET http://localhost:8080/users/4
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+### Houses - create house
+POST http://localhost:8080/houses
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Nice house by the sea",
+  "location": 1,
+  "areaSqMt": 120,
+  "pricePerNight": 80.0,
+  "description": "Great view."
+}
+
+###
+### Houses - list all houses
+GET http://localhost:8080/houses?skip=1&limit=4
+Accept: application/json
+
+###
+### Houses - get house details
+GET http://localhost:8080/houses/9
+Accept: application/json
+
+###
+### Houses - get available houses
+GET http://localhost:8080/houses/available?startDate=2026-06-10&endDate=2026-06-15&skip=0&limit=19
+Accept: application/json
+
+###
+### Bookings - create booking
+POST http://localhost:8080/bookings
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "hid": 1,
+  "startDate": "2027-06-10",
+  "endDate": "2028-06-12"
+}
+
+###
+### Bookings - list my bookings
+GET http://localhost:8080/bookings?skip=0&limit=2
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+### Bookings - get booking details
+GET http://localhost:8080/bookings/4
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+### Location - get location details
+GET http://localhost:8080/locations/5
+Accept: application/json
+
+
+###
+### Location - get the children locations
+GET http://localhost:8080/locations/1/children
+Accept: application/json
+
+
+###
+### Location - create a new location
+POST http://localhost:8080/locations
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Israel",
+  "type": "COUNTRY",
+  "parentId": null
+}
+
+###
+### Location - get Full Path of a location
+GET http://localhost:8080/locations/3/fullpath
+Accept: application/json
+
+
+
+###
+### Location - get locations paging
+GET http://localhost:8080/locations?skip=1&limit=4
+Accept: application/json
+
+
+
